@@ -146,6 +146,7 @@ def test_pce_pj(tmpdir):
         m.submit(Jobs().addStd(encode_job))
         m.submit(Jobs().addStd(execute_job))
 
+    print("Waiting for completion of all QCG PJ tasks")
     # wait for completion of all PJ tasks and terminate the PJ manager
     m.wait4all()
     m.finish()
@@ -171,6 +172,15 @@ def test_pce_pj(tmpdir):
     per = results['percentiles']['te']
     sobols = results['sobol_indices']['te'][1]
     dist_out = results['output_distributions']['te']
+
+    print("Stats: ")
+    print(stats)
+    print("Percentiles: ")
+    print(per)
+    print("Sobols: ")
+    print(sobols)
+    print("Output distribution: ")
+    print(dist_out)
 
     print("Processing completed")
     return stats, per, sobols, dist_out
