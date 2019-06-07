@@ -13,6 +13,7 @@ __license__ = "LGPL"
 
 cwd = os.getcwd()
 easypj_conf = os.environ["EASYPJ_CONF"]
+pce_app_dir = os.environ["PCE_APP"]
 
 def test_pce_pj(tmpdir):
 
@@ -66,7 +67,7 @@ def test_pce_pj(tmpdir):
 
     # Create an encoder, decoder and collation element for PCE test app
     encoder = uq.encoders.GenericEncoder(
-        template_fname='pce/pce.template',
+        template_fname=pce_app_dir + '/pce.template',
         delimiter='$',
         target_filename='pce_in.json')
 
@@ -127,7 +128,7 @@ def test_pce_pj(tmpdir):
                 "args": [my_campaign.campaign_dir,
                          key,
                          'easyvvuq_app',
-                         cwd + "/pce/pce_model.py", "pce_in.json"],
+                         pce_app_dir + "/pce_model.py", "pce_in.json"],
                 "wd": cwd,
                 "env": { "EASYPJ_CONF": easypj_conf },
             },

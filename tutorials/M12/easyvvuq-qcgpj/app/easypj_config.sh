@@ -3,6 +3,7 @@
 # initiate virtualenv
 . ~/.virtualenvs/easyvvuq-qcgpj/bin/activate
 
+export PCE_APP=~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/pce
 
 # Do not change anything below
 
