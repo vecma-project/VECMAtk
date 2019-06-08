@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# load modules
+module load python/3.7.3
+
 # initiate virtualenv
 . ~/.virtualenvs/easyvvuq-qcgpj/bin/activate
 
