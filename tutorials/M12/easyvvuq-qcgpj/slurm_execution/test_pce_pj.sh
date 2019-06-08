@@ -24,7 +24,6 @@
 ## grant
 #SBATCH --account=vecma2019
 
-module load python/3.7.3
-. ~/.virtualenvs/easyvvuq-qcgpj/bin/activate
+. ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh
 
 python3 test_pce_pj.py

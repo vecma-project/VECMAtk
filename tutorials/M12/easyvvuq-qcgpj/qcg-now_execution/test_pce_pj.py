@@ -12,7 +12,8 @@ from easypj.pj_configurator import PJConfigurator
 __license__ = "LGPL"
 
 cwd = os.getcwd()
-
+easypj_conf = os.environ["EASYPJ_CONF"]
+pce_app_dir = os.environ["PCE_APP"]
 
 def test_pce_pj(tmpdir):
 
@@ -66,7 +67,7 @@ def test_pce_pj(tmpdir):
 
     # Create an encoder, decoder and collation element for PCE test app
     encoder = uq.encoders.GenericEncoder(
-        template_fname='pce/pce.template',
+        template_fname=pce_app_dir + '/pce.template',
         delimiter='$',
         target_filename='pce_in.json')
 
@@ -107,12 +108,11 @@ def test_pce_pj(tmpdir):
         encode_job = {
             "name": 'encode_' + key,
             "execution": {
-                "exec": cwd + '/pj_scripts/easyvvuq_encode',
+                "exec": 'easyvvuq_encode',
                 "args": [my_campaign.campaign_dir,
                          key],
                 "wd": cwd,
-                "stdout": my_campaign.campaign_dir + '/encode_' + key + '.stdout',
-                "stderr": my_campaign.campaign_dir + '/encode_' + key + '.stderr'
+                "env": { "EASYPJ_CONF": easypj_conf },
             },
             "resources": {
                 "numCores": {
@@ -124,14 +124,13 @@ def test_pce_pj(tmpdir):
         execute_job = {
             "name": 'execute_' + key,
             "execution": {
-                "exec": cwd + '/pj_scripts/easyvvuq_execute',
+                "exec": 'easyvvuq_execute',
                 "args": [my_campaign.campaign_dir,
                          key,
-                         cwd + "/pj_scripts/easyvvuq_app",
-                         cwd + "/pce/pce_model.py", "pce_in.json"],
+                         'easyvvuq_app',
+                         pce_app_dir + "/pce_model.py", "pce_in.json"],
                 "wd": cwd,
-                "stdout": my_campaign.campaign_dir + '/execute_' + key + '.stdout',
-                "stderr": my_campaign.campaign_dir + '/execute_' + key + '.stderr'
+                "env": { "EASYPJ_CONF": easypj_conf },
             },
             "resources": {
                 "numCores": {
