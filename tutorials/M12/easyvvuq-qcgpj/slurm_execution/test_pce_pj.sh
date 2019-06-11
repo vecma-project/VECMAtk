@@ -26,4 +26,4 @@
 
 . ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh
 
-python3 test_pce_pj.py
+python3 ../app/test_pce_pj.py

@@ -3,7 +3,7 @@
 #QCG walltime=PT10M
 #QCG grant=vecma2019
 #QCG nodes=1:4
-#QCG stage-in-file=./test_pce_pj.py
+#QCG stage-in-file=../app/test_pce_pj.py
 #QCG stage-out-dir=. -> results-${JOB_ID}
 #QCG output=output-${JOB_ID}.txt
 #QCG error=error-${JOB_ID}.txt
