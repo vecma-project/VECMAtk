@@ -19,6 +19,9 @@ def test_pce_pj(tmpdir):
 
     print("Running in directory: " + cwd)
 
+    # establish available resources
+    cores = 4
+
     # set location of log file
     # client_conf = {'log_file': tmpdir.join('api.log'), 'log_level': 'DEBUG'}
 
@@ -26,7 +29,7 @@ def test_pce_pj(tmpdir):
     client_conf = {'log_level': 'DEBUG'}
 
     # switch on debugging (by default in api.log file)
-    m = LocalManager([], client_conf)
+    m = LocalManager(['--nodes', str(cores)], client_conf)
 
     # This can be used for execution of the test using a separate (non-local) instance of PJManager
     #
