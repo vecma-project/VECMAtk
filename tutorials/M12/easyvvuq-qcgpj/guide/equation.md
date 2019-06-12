@@ -11,28 +11,28 @@ assists users with the process of UQ on their numerical model.
 The sample physics model in this tutorial is inspired by the “cooling coffee cup
 model” from [^2]. A cup of coffee is placed inside some environment of
 temperature T<sub>env</sub>. Consequently, the cup of coffee experiences heat
-loss and its temperature $$T$$varies in time $$t$$, as described mathematically
+loss and its temperature *T* varies in time *t*, as described mathematically
 by the Newton’s law of cooling:
 
 [^2]: https://uncertainpy.readthedocs.io/en/latest/examples/coffee_cup.html
 
-dT(t)/dt=<sub>K</sub>(T(t) - T<sub>env</sub>),
+*dT(t)/dt=<sub>K</sub>(T(t) - T<sub>env</sub>)*,
 
-where <sub>K</sub> is a constant that describes the system. The python script
+where *<sub>K</sub>* is a constant that describes the system. The python script
 pce_model.py, which is provided as part of the tutorial materials, takes the
-initial coffee temperature T<sub>0</sub>, <sub>K</sub> and T<sub>env</sub> and
-solve the above equation to find T. The quantity of interest here is T,
-but there are uncertainties to the inputs <sub>K</sub> and T<sub>env</sub>. The
-goal here is to obtain the probability distribution of the measured value T,
+initial coffee temperature *T<sub>0</sub>*, *<sub>K</sub>* and *T<sub>env</sub>* and
+solve the above equation to find *T*. The quantity of interest here is *T*,
+but there are uncertainties to the inputs *<sub>K</sub>* and *T<sub>env</sub>*. The
+goal here is to obtain the probability distribution of the measured value *T*,
 given that there are uncertainties to the inputs. Please note that, from this
 point forward, all quantities will be mentioned without explicit units.
 
 We begin the UQ calculations to the model by defining lower and upper threshold
 values to a uniform distribution for both uncertain inputs:
 
-$$0.025  <=  <sub>K</sub>  <=  0.075$$, and
+*0.025  <=  <sub>K</sub>  <=  0.075*, and
 
-$$15.0  <= T<sub>env</sub>  <=  25.0$$.
+*15.0  <= T<sub>env</sub>  <=  25.0*.
 
 The initial coffee temperature T<sub>0</sub> is set to be 95.0, and the calculation
 runs from *t=0* to *t=200*. At the end of the simulation, we defined two
