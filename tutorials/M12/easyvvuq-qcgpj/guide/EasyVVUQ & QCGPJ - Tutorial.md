@@ -188,7 +188,7 @@ check all parameters and make changes accordingly.
     Successfully installed virtualenv-16.6.0
     ```
 
-4.  If required, attend the warning from the previous step, add `~/.local/bin` to
+4.  If required, attend to the warning from the previous step, add `~/.local/bin` to
     the `PATH` environment variable and make it permanent by updating the `.bashrc`
     file.
     ```
@@ -614,18 +614,18 @@ understand both the small-scaled turbulence and the large-scale plasma
 transport, for the instabilities produced by turbulence affects plasma
 confinement. This is a problem that involves a wide range of spatial and
 temporal scales. Previously scientists were only able to focus on building
-single-scaled physics models due to very-limited computing capacity. However,
+single-scale physics models due to very-limited computing capacity. However,
 with supercomputers performance continuously on the rise, multiscale modelling
 becomes feasible and there are much effort within the fusion community to come
-up with a reliable simulation model to understand the multiscale phenomenon.
+up with a reliable simulation that can help us better understand the multiscale phenomenon.
 
 ![](images/iter.jpg)
 
 An illustration of the ITER tokamak.
 
 The multiscale fusion workflow (MFW) is one of such efforts. It takes the
-component base approach to connect several single-scaled models into a workflow:
-the equilibrium model that updates tokamak equilibrium information; turbulence
+component base approach to connect several single-scale models into a workflow:
+an equilibrium model that updates tokamak equilibrium information; turbulence
 model that calculates particle and heat fluxes; transport model that maps out
 the core plasma profiles (e.g. temperature); conversion module that converts
 fluxes calculated by the turbulence model into transport coefficients required
@@ -650,23 +650,23 @@ There are different methods of UQ in a multiscale application. One approach is n
 example, we treat the transport model as a blackbox and apply PCE to 4 uncertain
 input parameters, diffusivity *D<sub>N*, with 4th order polynomial, and this yields
 (4+2)<sup>4</sup> or 1296 samples. The transport model then outputs temperature profiles
-*T<sub>a</sub>(p)*, where *T<sub>a* is the temperature of species
-*a* and *p* the toroidal flux coordinate value. Here we take the
+*T<sub>a</sub>(p<sub>tor</sub>)*, where *T<sub>a* is the temperature of species
+*a* and *p<sub>tor</sub>* the toroidal flux coordinate value. Here we take the
 EasyVVUQ-QCGPJ workflow from the tutorial materials and made a few changes
 suitable for the transport model. Then we use it to prepare and run all samples,
 and finally EasyVVUQ collates the results from these samples and calculates the mean,
-standard deviation, variance, and Sobol indices of *T<sub>a</sub>(p)*. The
+ standard deviation, variance, and Sobol indices of *T<sub>a</sub>(p<sub>tor</sub>)*. The
 figures below show the statistical analysis results of electron temperature
  *T<sub>e</sub>* and the first-order Sobol indices.
 
 ![](images/fusion-chart1.png)
 ![](images/fusion-chart2.png)
 
-Mean, standard deviation, and variance of the *T<sub>e</sub>* (left) and first-order
-Sobol indices (right) from 1296 samples.
+Mean, standard deviation, and variance of the *T<sub>e</sub>* (top) and first-order
+Sobol indices (bottom) from 1296 samples.
 
 Besides the non-intrusive UQ method on the transport model, we are also
-exploring the semi-intrusive UQ method. In the semi-intrusive method, the
+exploring the semi-intrusive UQ method. Under such method, the
 transport and equilibrium models are treated as individual blackboxes. The PCE
 method is applied to the transport model/blackbox first, then the statistical
 information of *T<sub>a</sub>* is propagated into the equilibrium blackbox as
