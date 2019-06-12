@@ -2,8 +2,6 @@
 ### Demonstration on efficient, parallel Execution of EasyVVUQ with QCG Pilot Job Manager on local and HPC resources (a step-by-step guide)
 
 ## Contents
-
-  * [Contents](#contents)
   * [Preface](#preface)
   * [Introduction](#introduction)
   * [Application model for the tutorial](#application-model-for-the-tutorial)
@@ -18,8 +16,6 @@
     + [Execution with QCG-Now](#execution-with-qcg-now)
   * [Example of a real multiscale application: Fusion](#example-of-a-real-multiscale-application-fusion)
   * [References](#references)
-
-[TOC]
 
 ## Preface
 
