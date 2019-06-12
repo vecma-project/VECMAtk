@@ -225,33 +225,27 @@ check all parameters and make changes accordingly.
     (easyvvuq-qcgpj)$ pip3 install git+https://github.com/vecma-project/EasyVVUQ-QCGPJ.git@m12
     ```
     
-Getting the tutorial materials
-==============================
+## Getting the tutorial materials
 
 1.  Create directory for the tutorial
-
-| \$ mkdir tutorial |
-|-------------------|
-
+    ```
+    $ mkdir tutorial
+    ```
 
 2.  The materials used in this tutorial are available in GitHub VECMAtk
     repository. Clone them with the following commands:
+    ```
+    $ cd ~/tutorial
+    $ git clone https://github.com/vecma-project/VECMAtk.git
+    ```
 
-| \$ cd \~/tutorial \$ git clone https://github.com/vecma-project/VECMAtk.git |
-|-----------------------------------------------------------------------------|
+## Execution of EasyVVUQ with QCG Pilot Job
 
-
-Execution of EasyVVUQ with QCG Pilot Job
-========================================
-
-In this tutorial we describe 4 ways to execute EasyVVUQ with QCG Pilot Job.
+In this tutorial we describe 4 ways to execute EasyVVUQ with QCG Pilot Job:
 
 1.  Local execution
-
 2.  With SLURM
-
 3.  With QCG-Client
-
 4.  With QCG-Now
 
 Each method has its own advantages and disadvantages. The local execution can be
@@ -266,8 +260,7 @@ workflow is discussed before the step-by-step instructions are presented for
 each method of execution. The eventual choice of method should be based on the
 user’s preferences and requirements.
 
-EasyVVUQ-QCGPJ workflow
------------------------
+### EasyVVUQ-QCGPJ workflow
 
 The approach we took to integrate EasyVVUQ with QCG Pilot Job Manager is
 considerably non-intrusive. The changes we introduced to the EasyVVUQ workflow
@@ -283,13 +276,63 @@ EasyVVUQ-QCGPJ works, please go to:
 The workflow constructed for uncertainty quantification of a cooling coffee cup
 is available in:
 
-\~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/test_pce_pj.py
+`~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/test_pce_pj.py`
 
 Considerably simplified, it looks as follows:
+```python3
+def test_pce_pj(tmpdir):
 
-| def test_pce_pj(tmpdir): \# Initializing the QCG PJ Manager m = LocalManager([], client_conf) \# Set up a fresh campaign called "pce" my_campaign = uq.Campaign(name='pce', work_dir=tmpdir) \# Skipped code that initialises the campaign and samples for the use-case. \# Create PJConfigurator & save its state PJConfigurator(my_campaign).save() \# Execute encode -\> execute for each run (sample) using QCG PJ manager for key in my_campaign.list_runs(): encode_job = { "execution": { "name": 'encode_' + key, "exec": 'easyvvuq_encode', "args": [my_campaign.campaign_dir, key], ... }, "resources": { "numCores": {"exact": 1} } } execute_job = { "execution": { "name": 'execute_' + key, "exec": 'easyvvuq_execute', "args": [my_campaign.campaign_dir, key, 'easyvvuq_app', pce_app_dir + "/pce_model.py", "pce_in.json"], "wd": cwd }, "resources": { "numCores": {"exact": 1} }, "dependencies": { "after": ["encode_" + key] } } m.submit(Jobs().addStd(encode_job)) m.submit(Jobs().addStd(execute_job)) \# wait for completion of all PJ tasks and terminate the QCG PJ manager m.wait4all() m.finish() m.stopManager() m.cleanup() \# The rest of typical EasyVVUQ processing (collation, analysis) |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    # Initializing the QCG PJ Manager
+    m = LocalManager([], client_conf)
+  
+    # Set up a fresh campaign called "pce"
+    my_campaign = uq.Campaign(name='pce', work_dir=tmpdir)
+    # Skipped code that initialises the campaign and samples for the use-case. 
+ 
+    # Create PJConfigurator & save its state
+    PJConfigurator(my_campaign).save()
 
+    # Execute encode -> execute for each run (sample) using QCG PJ manager
+    for key in my_campaign.list_runs():
+        encode_job = {
+            "execution": {
+                "name": 'encode_' + key,
+                "exec": 'easyvvuq_encode',
+                "args": [my_campaign.campaign_dir, key],
+                ...
+            },
+            "resources": {
+                "numCores": {"exact": 1}
+            }
+        }
+
+        execute_job = {
+            "execution": {
+                "name": 'execute_' + key,
+                "exec": 'easyvvuq_execute',
+                "args": [my_campaign.campaign_dir,
+                         key, 'easyvvuq_app',
+                         pce_app_dir + "/pce_model.py", "pce_in.json"],
+                "wd": cwd
+            },
+            "resources": {
+                "numCores": {"exact": 1}
+            },
+            "dependencies": {
+                "after": ["encode_" + key]
+            }
+        }
+        m.submit(Jobs().addStd(encode_job))
+        m.submit(Jobs().addStd(execute_job))
+
+    # wait for completion of all PJ tasks and terminate the QCG PJ manager
+    m.wait4all()
+    m.finish()
+    m.stopManager()
+    m.cleanup()
+
+    # The rest of typical EasyVVUQ processing (collation, analysis)
+```
 
 We can distinguish the following key elements from this script:
 
