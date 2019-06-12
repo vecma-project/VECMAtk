@@ -1,13 +1,11 @@
 # Uncertainty Quantification in Numerical Models: from simple model on Newton's law of cooling to multiscale fusion model
 ### Demonstration on efficient, parallel Execution of EasyVVUQ with QCG Pilot Job Manager on local and HPC resources (a step-by-step guide)
 
-Contents
-========
+## Contents
 
 [TOC]
 
-Preface
-=======
+## Preface
 
 In this tutorial, you will get a step-by-step guidance on the usage of several
 VECMAtk components to perform uncertainty quantification calculations within a
@@ -29,8 +27,7 @@ software components:
 -   [QCG-Now](http://www.qoscosgrid.org/qcg-now/en/) - a desktop, GUI client for
     easy execution of computing jobs on the clusters offered by QCG middleware.
 
-Introduction 
-=============
+## Introduction 
 
 As the performance of supercomputers become more powerful, it also turns into a
 driving force for the science and engineering communities to construct
@@ -93,8 +90,7 @@ short motivation to VECMA infrastructure’s leader - Tomasz Piontek:
 piontek_at_man.poznan.pl.
 
 
-Application model for the tutorial
-==================================
+## Application model for the tutorial
 
 To give users a sense of how EasyVVUQ-QCGPJ works, we provide a simple cooling
 coffee cup model as a test application throughout the entire tutorial. This
@@ -558,71 +554,54 @@ task from QCG-Now are as follows:
 
 2.  In the main window of QCG-Now click "+"
 
-    ![](media/c0ef8b0d4973262fead203f617ac86ef.png)
+    ![](images/qcg-now-1.png)
 
 3.  The New Task definition window should open. When you select the Files tab it
     should look as follows:
 
-![](media/d23169802e43408494abfa239f06258a.png)
+    ![](images/qcg-now-2.png)
 
-1.  Drag&drop the /tutorials/M12/easyvvuq-qcgpj/app/test_pce_pj.py file from the
+4.  Drag&drop the /tutorials/M12/easyvvuq-qcgpj/app/test_pce_pj.py file from the
     extracted zip file into "DROP FILES HERE" space:
+    
+    ![](images/qcg-now-3.png)
 
-![](media/94b0a837fce4828413b3d6aea5e5a24a.png)
+5.  In the Properties tab select:
+    - Application: **bash**
+    - Task Name: EasyVVUQ test
+    - Grant: leave blank to use a default one or select another
+    - Submission type: **Submit script**
+    - In the opened textarea write:
+    ```
+    . \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh python3 test_pce_pj.py
+    ```
+    ![](images/qcg-now-4.png)
 
-1.  In the Properties tab select:
+5.  In the Requirements tab select:
+    - Resource: **eagle**
+    - Calculation type: **Parallel** (Number of nodes: **1**, Cores per node: **4**, Processes per node **4**)
+    - Walltime: **5 minutes**
+    
+    ![](images/qcg-now-5.png)
 
->   Application: **bash**
-
->   Task Name: EasyVVUQ test
-
->   Grant: leave blank to use a default one or select another
-
->   Submission type: **Submit script**
-
->   In the opened textarea write:
-
-| . \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh python3 test_pce_pj.py |
-|------------------------------------------------------------------------------------------------|
-
-
-![](media/88b25f5e5da8da6c8cc91ef62b9921e4.png)
-
-1.  In the Requirements tab select:
-
->   Resource: **eagle**
-
->   Calculation type: **Parallel** (Number of nodes: **1**, Cores per node:
->   **4**, Processes per node **4**)
-
->   Walltime: **5 minutes**
-
-![](media/1cf427dde7342a1f2afc2cd690de3c2f.png)
-
-1.  Click the submit button (the arrow in the top-right corner). At this moment
+6.  Click the submit button (the arrow in the top-right corner). At this moment
     QCG-Now initiates a data transfer to the computing resources and requests
     the QCG middleware for the task execution.
-
-![](media/e7661bb8dcb3dc1080a94e990c6f9435.png)
-
-1.  When submitted, the task is added to the list of tasks in the main window,
+   
+    ![](images/qcg-now-6.png)
+    
+7.  When submitted, the task is added to the list of tasks in the main window,
     where it is possible to track the state and progress of its execution in two
     complementary views:
-
-    ![](media/5762ccf0f5245501fa55c62392eafba1.png)
-
-    ![](media/01f4f4d0ff1b3580f63ff79ce76c4746.png)
+    ![](images/qcg-now-7.png)
+    ![](images/qcg-now-8.png)
 
 2.  When the task completes successfully, the output data is transferred back to
     a user's computer and user can open a directory with results using one of
     dedicated buttons from the main window.  
-    
-
-    ![](media/33b800ae70cdfa9c8c3b6196cea419e0.png)
-
-    >   or
-
-    ![](media/7fdfeda63edc65a44b63b8cdf36ffbee.png)
+    ![](images/qcg-now-9.png)
+    or
+    ![](images/qcg-now-10.png)
 
 Example of a real multiscale application: Fusion
 ================================================
