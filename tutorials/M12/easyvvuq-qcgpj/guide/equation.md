@@ -10,7 +10,7 @@ assists users with the process of UQ on their numerical model.
 
 The sample physics model in this tutorial is inspired by the “cooling coffee cup
 model” from [^2]. A cup of coffee is placed inside some environment of
-temperature T<sub>env</sub>. Consequently, the cup of coffee experiences heat
+temperature *T<sub>env</sub>*. Consequently, the cup of coffee experiences heat
 loss and its temperature *T* varies in time *t*, as described mathematically
 by the Newton’s law of cooling:
 
@@ -34,15 +34,15 @@ values to a uniform distribution for both uncertain inputs:
 
 *15.0  <= T<sub>env</sub>  <=  25.0*.
 
-The initial coffee temperature T<sub>0</sub> is set to be 95.0, and the calculation
+The initial coffee temperature *T<sub>0</sub>* is set to be *95.0*, and the calculation
 runs from *t=0* to *t=200*. At the end of the simulation, we defined two
-extra parameters T<sub>e</sub> and T<sub>i</sub>, with T<sub>e</sub>  identically equal to T and T<sub>i</sub>
-identically equal to -T. We select the Polynomial Chaos Expansion[^3] PCE method with
-1st order polynomial, which would result in (1 + 2)<sup>2<sup> or 9 sample runs. A
+extra parameters *T<sub>e</sub>* and *T<sub>i</sub>*, with *T<sub>e</sub>* identically equal to *T* and *T<sub>i</sub>*
+identically equal to *-T*. We select the Polynomial Chaos Expansion[^3] PCE method with
+1st order polynomial, which would result in (1 + 2)<sup>2</sup> or 9 sample runs. A
 python script is provided in the tutorial material “test_pce_pj.py”, showcasing
 how EasyVVUQ-QCGPJ takes the input parameters and handle all sample calculations
 in an efficient manner, and provides statistical analysis to the outputs
-$$T(t)$$ (i.e. mean, standard deviation, variance, Sobol indices[^4]). Here is a
+*T(t)* (i.e. mean, standard deviation, variance, Sobol indices[^4]). Here is a
 schematic depicting the entire UQ procedure described above.
 
 [^3]: https://en.wikipedia.org/wiki/Polynomial_chaos
@@ -52,8 +52,8 @@ schematic depicting the entire UQ procedure described above.
 ![](media/3e3df0f30600f1c35825e952a384b027.png)
 
 UQ of the cooling coffee cup model: the EasyVVUQ-QCGPJ of the VECMAtk takes the
-uncertain inputs and produces statistical analysis to T(t). The plots on the
-right are the calculated average temperature, standard deviation *< T(t) > sigma*, and variance (top plot); and the first order Sobol indices for the uncertain input parameters <sub>K</sub> and T<sub>env</sub> (bottom plot).
+uncertain inputs and produces statistical analysis to *T(t)*. The plots on the
+right are the calculated average temperature, standard deviation *< T(t) > sigma*, and variance (top plot); and the first order Sobol indices for the uncertain input parameters *<sub>K</sub>* and *T<sub>env</sub>* (bottom plot).
 
 The rest of the tutorial will guide you through the toolkit installation and
 execution of this model. Before “running test_pce_pj.py”, please be sure to
