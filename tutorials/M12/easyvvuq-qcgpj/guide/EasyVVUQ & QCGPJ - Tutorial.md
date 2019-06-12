@@ -155,62 +155,76 @@ The rest of the tutorial will guide you through the toolkit installation and
 execution of this model. Before “running test_pce_pj.py”, please be sure to
 check all parameters and make changes accordingly.
 
-Installation of EasyVVUQ-QCGPJ
-==============================
+## Installation of EasyVVUQ-QCGPJ
 
 1.  If you are going to work remotely on a cluster, please login into access
     node and start an interactive SLURM job (we are doing it on Eagle cluster,
     which is a part of the VECMA testbed).
-
-| \$ ssh user\@eagle.man.poznan.pl \$ srun -n 1 --time=2:00:00 --partition=plgrid --pty /bin/bash |
-|-------------------------------------------------------------------------------------------------|
-
+    ```
+    $ ssh user@eagle.man.poznan.pl 
+    $ srun -n 1 --time=2:00:00 --partition=plgrid --pty /bin/bash 
+    ```
 
 2.  Be sure that **Python 3.6+** and **pip 18.0.1+** are installed and available
     in your environment. In case of Eagle cluster use the module for the newest
     version of the python.
+    ```
+    $ python3 -V Python 
+    3.6.6 
+    $ module load python/3.7.3 
+    $ python3 -V Python 3.7.3
+    ```
 
-| \$ python3 -V Python 3.6.6 \$ module load python/3.7.3 \$ python3 -V Python 3.7.3 |
-|-----------------------------------------------------------------------------------|
+3.  Check if *virtualenv* is installed on your system and if not install it
+    ```
+    $ virtualenv --version
+    bash: virtualenv: command not found
+    $ pip3 install --user virtualenv
+    Collecting virtualenv
+      Downloading https://files.pythonhosted.org/packages/ca/ee/8375c01412abe6ff462ec80970e6bb1c4308724d4366d7519627c98691ab/virtualenv-16.6.0-py2.py3-none-any.whl (2.0MB)
+        100% |████████████████████████████████| 2.0MB 2.0MB/s
+    Installing collected packages: virtualenv
+      The script virtualenv is installed in '/home/plgrid/user/.local/bin' which is not on PATH.
+      Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+    Successfully installed virtualenv-16.6.0
+    ```
 
-
-3.  Check if virtualenv is installed on your system and if not install it
-
-| \$ virtualenv --version bash: virtualenv: command not found \$ pip3 install --user virtualenv Collecting virtualenv Downloading https://files.pythonhosted.org/packages/ca/ee/8375c01412abe6ff462ec80970e6bb1c4308724d4366d7519627c98691ab/virtualenv-16.6.0-py2.py3-none-any.whl (2.0MB) 100% \|████████████████████████████████\| 2.0MB 2.0MB/s Installing collected packages: virtualenv The script virtualenv is installed in '/home/plgrid/user/.local/bin' which is not on PATH. Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location. Successfully installed virtualenv-16.6.0 |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-4.  If required, attend the warning from the previous step, add \~/.local/bin to
-    the PATH environment variable and make it permanent by updating the .bashrc
+4.  If required, attend the warning from the previous step, add `\~/.local/bin` to
+    the `PATH` environment variable and make it permanent by updating the `.bashrc`
     file.
+    ```
+    $ export PATH=/home/plgrid/user/.local/bin:$PATH
+    $ echo 'PATH=/home/plgrid/user/.local/bin:$PATH' >> .bashrc
+    $ virtualenv --version
+    16.6.0
+    ```
 
-| \$ export PATH=/home/plgrid/user/.local/bin:\$PATH \$ echo 'PATH=/home/plgrid/user/.local/bin:\$PATH' \>\> .bashrc \$ virtualenv --version 16.6.0 |
-|---------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-5.  Create virtualenv for the EasyVVUQ with QCG-PJ support:
-
-| \$ virtualenv \~/.virtualenvs/easyvvuq-qcgpj Using base prefix '/opt/exp_soft/local/generic/python/3.7.3' New python executable in /home/plgrid/user/.virtualenvs/easyvvuq-qcgpj/bin/python3.7 Also creating executable in /home/plgrid/user/.virtualenvs/easyvvuq-qcgpj/bin/python Installing setuptools, pip, wheel... done. |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+5.  Create *virtualenv* for the EasyVVUQ with QCG-PJ support:
+    ```
+    $ virtualenv ~/.virtualenvs/easyvvuq-qcgpj
+    Using base prefix '/opt/exp_soft/local/generic/python/3.7.3'
+    New python executable in /home/plgrid/user/.virtualenvs/easyvvuq-qcgpj/bin/python3.7
+    Also creating executable in /home/plgrid/user/.virtualenvs/easyvvuq-qcgpj/bin/python
+    Installing setuptools, pip, wheel...
+    done.
+    ```
 
 6.  Activate this virtualenv:
+    ```
+    $ . ~/.virtualenvs/easyvvuq-qcgpj/bin/activate
+    (easyvvuq-qcgpj) user@e0192:~$ 
+    ```
 
-| \$ . \~/.virtualenvs/easyvvuq-qcgpj/bin/activate (easyvvuq-qcgpj) user\@e0192:\~\$ |
-|------------------------------------------------------------------------------------|
-
-
-7.  Install the easyvvuq-qcgpj package using pip3  
+7.  Install the *easyvvuq-qcgpj* package using pip3  
     (Note: if you are not able to use pip in your environment you can always
     install all required packages manually as they are publicly available, e.g.
-    by cloning repositories for missing packages and invoking python3 setup.py
-    install for each one - take a look for the requirements here:
+    by cloning repositories for missing packages and invoking python3 `setup.py
+    install for each one` - take a look for the requirements here:
     https://github.com/vecma-project/EasyVVUQ-QCGPJ/blob/m12/setup.py)
-
-| (easyvvuq-qcgpj)\$ pip3 install git+https://github.com/vecma-project/EasyVVUQ-QCGPJ.git\@m12 |
-|----------------------------------------------------------------------------------------------|
-
-
+    ```
+    (easyvvuq-qcgpj)$ pip3 install git+https://github.com/vecma-project/EasyVVUQ-QCGPJ.git@m12
+    ```
+    
 Getting the tutorial materials
 ==============================
 
