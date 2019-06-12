@@ -145,7 +145,7 @@ in an efficient manner, and provides statistical analysis to the outputs
 *T(t)* (i.e. mean, standard deviation, variance, Sobol indices<sup>[4](#fn4)</sup>). Here is a
 schematic depicting the entire UQ procedure described above.
 
-![](media/3e3df0f30600f1c35825e952a384b027.png)
+![](images/coffe-mug.png)
 
 UQ of the cooling coffee cup model: the EasyVVUQ-QCGPJ of the VECMAtk takes the
 uncertain inputs and produces statistical analysis to *T(t)*. The plots on the
