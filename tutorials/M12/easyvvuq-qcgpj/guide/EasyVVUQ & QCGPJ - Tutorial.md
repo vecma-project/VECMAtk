@@ -1,9 +1,10 @@
-| Uncertainty Quantification in Numerical Models: from simple model on Newton's law of cooling to multiscale fusion model Demonstration on efficient, parallel Execution of EasyVVUQ with QCG Pilot Job Manager on local and HPC resources (a step-by-step guide) |
-|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+# Uncertainty Quantification in Numerical Models: from simple model on Newton's law of cooling to multiscale fusion model
+#### Demonstration on efficient, parallel Execution of EasyVVUQ with QCG Pilot Job Manager on local and HPC resources (a step-by-step guide)
 
 Contents
 ========
+
+[TOC]
 
 Preface
 =======
@@ -18,19 +19,13 @@ software components:
 
 -   [EasyVVUQ](https://github.com/UCL-CCS/EasyVVUQ) - a Python3 library that
     aims to facilitate verification, validation and uncertainty quantification,
-
 -   [QCG Pilot Job](https://wiki.vecma.eu/qcg-pilotjobs) - a Pilot Job system
     that allows to execute many subordinate jobs in a single scheduling system
     allocation,
-
 -   [EasyVVUQ-QCGPJ](https://github.com/vecma-project/easyvvuq-qcgpj) - a
     lightweight integration code that simplifies usage of EasyVVUQ with a QCG
     Pilot Job execution engine,
-
--   [QCG-Client](http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide)
-    - a command line client for execution of computing jobs on the clusters
-    offered by QCG middleware,
-
+-   [QCG-Client](http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide) - a command line client for execution of computing jobs on the clusters offered by QCG middleware,
 -   [QCG-Now](http://www.qoscosgrid.org/qcg-now/en/) - a desktop, GUI client for
     easy execution of computing jobs on the clusters offered by QCG middleware.
 
@@ -55,7 +50,6 @@ Such a number of tasks cannot be performed effectively without (1) adequate
 computational resources, (2) a dedicated approach and (3) specialised
 programming solutions.
 
-[^1]: https://wiki.vecma.eu/glossary
 
 In light of the aforementioned increase in availability of computing power,
 there is also an increase in operating cost of large data centers. Therefore,
@@ -89,14 +83,15 @@ reader who is interested in learning more about UQ applied to a multiscale
 workflow, a section describing the fusion model is positioned at the end of the
 tutorial.
 
-Notice 1: The tutorial contains some steps related to the execution of EasyVVUQ
+**Notice 1**: The tutorial contains some steps related to the execution of EasyVVUQ
 / QCG Pilot Job task via queuing system and/or QCG access tools. To follow these
 steps you must have an account with a computing cluster controlled by SLURM and
 if you want to use QCG tools it has to be part of the QCG infrastructure. In
 order to get access to Eagle cluster at Poznan Supercomputing and Networking
 Center, which is available with Slurm and QCG, please drop an e-mail with a
 short motivation to VECMA infrastructure’s leader - Tomasz Piontek:
-<piontek@man.poznan.pl>.
+piontek_at_man.poznan.pl.
+
 
 Application model for the tutorial
 ==================================
