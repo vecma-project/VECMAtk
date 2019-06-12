@@ -16,7 +16,7 @@ by the Newton’s law of cooling:
 
 [^2]: https://uncertainpy.readthedocs.io/en/latest/examples/coffee_cup.html
 
-$$\text{dT}(t)/\text{dt}\  = \  - \kappa(T(t) - T_{\text{env}})$$,
+dT(t)/dt=<sub>K</sub>(T(t) - T<sub>env</sub>),
 
 where $$\kappa$$ is a constant that describes the system. The python script
 pce_model.py, which is provided as part of the tutorial materials, takes the
