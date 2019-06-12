@@ -41,7 +41,7 @@ reliable? Are their calculations comparable to experimental measurements? Any
 simulation model, regardless of its level of complexity, becomes more robust if
 verified, validated, and minimized on uncertainties. Hence, uncertainty
 quantification becomes one of the central objectives in computational modelling.
-As defined in the VECMA glossary[^1], uncertainty quantification UQ is a
+As defined in the VECMA glossary<sup>[1](#fn1)</sup>, uncertainty quantification UQ is a
 “discipline, which seeks to estimate the uncertainty in the model input and
 output parameters, to analyse the sources of these uncertainties, and to reduce
 their quantities.” However, this process can quickly become cumbersome because
@@ -603,11 +603,11 @@ equilibrium code output. Ultimately we want to perform UQ to the entire
 multiscale workflow, which would mean many more samples are necessary.
 
 ## References
-[^1]: https://wiki.vecma.eu/glossary
-[^2]: https://uncertainpy.readthedocs.io/en/latest/examples/coffee_cup.html
-[^3]: https://en.wikipedia.org/wiki/Polynomial_chaos
-[^4]: https://en.wikipedia.org/wiki/Variance-based_sensitivity_analysis
-[^5]: https://www.iter.org/
-[^6]: O.O. Luk, O. Hoenen, A. Bottino, B.D. Scott, D.P. Coster, “ComPat
+<a name="fn1">1</a>: https://wiki.vecma.eu/glossary<br/>
+<a name="fn2">2</a>: https://uncertainpy.readthedocs.io/en/latest/examples/coffee_cup.html<br/>
+<a name="fn3">3</a>: https://en.wikipedia.org/wiki/Polynomial_chaos<br/>
+<a name="fn4">4</a>: https://en.wikipedia.org/wiki/Variance-based_sensitivity_analysis<br/>
+<a name="fn5">5</a>: https://www.iter.org/<br/>
+<a name="fn6">6</a>: O.O. Luk, O. Hoenen, A. Bottino, B.D. Scott, D.P. Coster, “ComPat
 framework for multiscale simulations applied to fusion plasmas”, Computer
 Physics Communications (2019), https://doi.org/10.1016/j.cpc.2018.12.021.
