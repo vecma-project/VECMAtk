@@ -648,16 +648,15 @@ uncertainties from the sources and equilibrium models, and internal
 uncertainties from the turbulence model. We need to define and reduce these
 uncertainties to ensure confidence in the simulation results.
 
-There are different methods of UQ in a multiscale application. One of which is
-non-intrusive, in which we treat a single-scale model as a blackbox. For
+There are different methods of UQ in a multiscale application. One approach is non-intrusive, in which we treat a single-scale model as a blackbox. For
 example, we treat the transport model as a blackbox and apply PCE to 4 uncertain
-input parameters, diffusivity *DN*, with 4th order polynomial, and this yields
+input parameters, diffusivity *D<sub>N*, with 4th order polynomial, and this yields
 (4+2)<sup>4</sup> or 1296 samples. The transport model then outputs temperature profiles
 *T<sub>a</sub>(p)*, where *T<sub>a* is the temperature of species
 *a* and *p* the toroidal flux coordinate value. Here we take the
 EasyVVUQ-QCGPJ workflow from the tutorial materials and made a few changes
 suitable for the transport model. Then we use it to prepare and run all samples,
-then EasyVVUQ collates the results from these samples and calculates the mean,
+and finally EasyVVUQ collates the results from these samples and calculates the mean,
 standard deviation, variance, and Sobol indices of *T<sub>a</sub>(p)*. The
 figures below show the statistical analysis results of electron temperature
  *T<sub>e</sub>* and the first-order Sobol indices.
@@ -675,7 +674,7 @@ method is applied to the transport model/blackbox first, then the statistical
 information of *T<sub>a</sub>* is propagated into the equilibrium blackbox as
 inputs. The PCE method is applied again to get statistical analysis of the
 equilibrium code output. Ultimately we want to perform UQ to the entire
-multiscale workflow, which would mean many more samples are necessary.
+multiscale workflow, which would mean many more samples are necessary. Once we reach that stage, efficient and parallel execution using the EasyVVUQ-QCGPJ component of the toolkit will become extremely useful to handle the massive amount of UQ samples.
 
 ## References
 <a name="fn1">1</a>: https://wiki.vecma.eu/glossary<br/>
