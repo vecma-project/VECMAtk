@@ -364,84 +364,100 @@ imagine that for some applications all encoding steps have to be executed before
 the first execution step begins. In that case, other applications only have to
 make simple modification to the presented workflow before use.
 
-Common configuration before execution
--------------------------------------
+### Common configuration before execution
 
 1.  Please check and update if needed the content of environment configuration
     file located in:
-    \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_conf.sh. This
+    `~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_conf.sh`. This
     file is used to configure system-specific settings for the developed
     workflow. Once you open this file, make sure the appropriate environment
-    modules are loaded and virtualenv is activated. Do not change the part
+    modules are loaded and *virtualenv* is activated. Do not change the part
     related to setting environment variables, for those variables are used in
     the workflow.
 
 2.  Source the configuration file. Once sourced, it should activate virtualenv:
+    ```
+    $ . ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh 
+    (easyvvuq-qcgpj)$ 
+    ```
 
-| \$ . \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh (easyvvuq-qcgpj)\$ |
-|-----------------------------------------------------------------------------------------------|
+### Local execution
 
-
-Local execution
----------------
-
-1.  Be sure that you have sourced the easypj_conf.sh file and are in the proper
-    virtualenv.
+1.  Be sure that you have sourced the `easypj_conf.sh` file and are in the proper
+    *virtualenv*.
 
 2.  Go into the
-    \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/local_execution:
-
-| (easyvvuq-qcgpj)\$ cd \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/local_execution |
-|----------------------------------------------------------------------------------------|
-
+    `~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/local_execution`:
+    ```
+    (easyvvuq-qcgpj)$ cd ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/local_execution
+    ```
 
 3.  Execute the workflow:  
     (Note that for the local execution we are using a slightly modified version
-    of the core workflow [not from the ../app folder] - since we are going to
+    of the core workflow ((not from the `../app` folder)) - since we are going to
     test this workflow locally, we define 4 virtual cores to demonstrate how QCG
     Pilot Job Manager executes tasks in parallel.)
-
-| (easyvvuq-qcgpj)\$ python3 test_pce_pj.py |
-|-------------------------------------------|
-
+    ```
+    (easyvvuq-qcgpj)$ python3 test_pce_pj.py
+    ```
 
 4.  When processing completes, check results produced by EasyVVUQ.
 
-Execution using SLURM
----------------------
+### Execution using SLURM
 
 *This execution is possible only on a cluster with the SLURM queuing system. In
 this tutorial we assume that EasyVVUQ-QCGPJ has been configured on the Eagle
 cluster in the way as described in the section Installation of EasyVVUQ-QCGPJ
-and the tutorial files has been cloned into the \~/tutorial/VECMAtk.*
+and the tutorial files has been cloned into the* `\~/tutorial/VECMAtk.`
 
-1.  Go into the \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/slurm_execution
+1.  Go into the `\~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/slurm_execution`
+    ```
+    $ cd ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/slurm_execution
+    ```
 
-| \$ cd \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/slurm_execution |
-|------------------------------------------------------------------------|
-
-
-2.  Adjust the SLURM job description file: test_pce_pj.sh.
+2.  Adjust the SLURM job description file: `test_pce_pj.sh`.
 
 3.  Submit the workflow as a SLURM batch job:
-
-| \$ sbatch test_pce_pj.sh Submitted batch job 11094963 |
-|-------------------------------------------------------|
-
+    ```
+    $ sbatch test_pce_pj.sh
+    Submitted batch job 11094963
+    ```
 
 4.  You can check the status of your SLURM jobs with:
+    ```
+    $ squeue -u plguser
+                 JOBID PARTITION     NAME     USER     ST     TIME  NODES NODELIST(REASON)
+              11094963 fast          easyvvuq plguser  R      0:02  1     e0022OBID
+    ```
 
-| \$ squeue -u plguser JOBID PARTITION NAME USER ST TIME NODES NODELIST(REASON) 11094963 fast easyvvuq plguser R 0:02 1 e0022OBID |
-|---------------------------------------------------------------------------------------------------------------------------------|
+5.  Alternatively you can display detailed information for a concrete job: 
+    ```
+    $ sacct -j 11094963
+           JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+    ------------ ---------- ---------- ---------- ---------- ---------- --------
+    11094963     easyvvuq_+       fast   vecma2019          4  COMPLETED      0:0
+    11094963.ba+      batch              vecma2019          4  COMPLETED      0:0
+    11094963.0   .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.1   .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.2   .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.3   .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.4   .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.5   .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.6   .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.7   .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.8   .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.9   .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.10  .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.11  .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.12  .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.13  .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.14  .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.15  .execute_+             vecma2019          1  COMPLETED      0:0
+    11094963.16  .encode_R+             vecma2019          1  COMPLETED      0:0
+    11094963.17  .execute_+             vecma2019          1  COMPLETED      0:0
+    ```
 
-
-5.  Alternatively you can display detailed information for a concrete job:
-
-| \$ sacct -j 11094963 JobID JobName Partition Account AllocCPUS State ExitCode ------------ ---------- ---------- ---------- ---------- ---------- -------- 11094963 easyvvuq_+ fast vecma2019 4 COMPLETED 0:0 11094963.ba+ batch vecma2019 4 COMPLETED 0:0 11094963.0 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.1 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.2 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.3 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.4 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.5 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.6 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.7 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.8 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.9 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.10 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.11 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.12 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.13 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.14 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.15 .execute_+ vecma2019 1 COMPLETED 0:0 11094963.16 .encode_R+ vecma2019 1 COMPLETED 0:0 11094963.17 .execute_+ vecma2019 1 COMPLETED 0:0 |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-6.  When the job completes, you can check the file output[jobid].txt, in which
+6.  When the job completes, you can check the file `output[jobid].txt`, in which
     you will find the output produced by EasyVVUQ.
 
 Execution with QCG-Client
