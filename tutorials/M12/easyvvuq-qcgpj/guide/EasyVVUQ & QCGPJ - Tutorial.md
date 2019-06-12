@@ -460,53 +460,80 @@ and the tutorial files has been cloned into the* `\~/tutorial/VECMAtk.`
 6.  When the job completes, you can check the file `output[jobid].txt`, in which
     you will find the output produced by EasyVVUQ.
 
-Execution with QCG-Client
--------------------------
+### Execution with QCG-Client
 
 *This execution can be performed only on a machine with QCG-Client installed and
 configured to execute jobs on a cluster with SLURM queuing system. In the
 tutorial we assume the usage of the QCG Client installed on qcg.man.poznan.pl
 and the Eagle cluster, which is a part of the PLGrid infrastructure. These two
-machines share the same \$HOME directory where both EasyVVUQ-QCGPJ has been
+machines share the same $HOME directory where both EasyVVUQ-QCGPJ has been
 configured in the way described in the section Installation of EasyVVUQ-QCGPJ
-and the tutorial files has been cloned into the \~/tutorial/VECMAtk.*
+and the tutorial files has been cloned into the* `\~/tutorial/VECMAtk`.
 
-1.  Login into the machine with qcg-client
+1.  Login into the machine where qcg-client is installed:
+    ```
+    $ ssh user@qcg.man.poznan.pl
+    ```
 
-| \$ ssh user\@qcg.man.poznan.pl |
-|--------------------------------|
+2.  Go into the `\~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/qcg_execution`
+    ```
+    $ cd ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/qcg_execution
+    ```
 
-
-2.  Go into the \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/qcg_execution
-
-| \$ cd \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/qcg_execution |
-|----------------------------------------------------------------------|
-
-
-3.  Adjust QCG job description file: test_pce_pj.qcg.
+3.  Adjust QCG job description file: `test_pce_pj.qcg`.
 
 4.  Submit the workflow as a QCG batch job (you may be asked to provide your
     personal certificate credentials):
-
-| \$ qcg-sub test_pce_pj.qcg Enter GRID pass phrase for this identity: ...                                                               |
-| test_pce_pj.qcg {} jobId = J1559813849509_easyvvuq_pj_qcg_4338                                                                         |
-|----------------------------------------------------------------------------------------------------------------------------------------|
-
+    ```
+    $ qcg-sub test_pce_pj.qcg
+    Enter GRID pass phrase for this identity:
+    ...
+    test_pce_pj.qcg {}      jobId = J1559813849509_easyvvuq_pj_qcg_4338
+    ```
 
 5.  You can list and check the status of QCG jobs with:
-
-| \$ qcg-list ... IDENTIFIER NOTE SUBMISSION START FINISH STATUS HOST FLAGS DESCRIPTION J1559813849509_easyvv\* 06.06.19 11:39 PREPROCESSING eagle S UP |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-
+    ```
+    $ qcg-list
+    ...
+    IDENTIFIER       NOTE  SUBMISSION     START   FINISH  STATUS   HOST  FLAGS  DESCRIPTION   
+    J1559813849509_easyvv* 06.06.19 11:39                 PREPROCESSING     
+                                                                   eagle S UP     
+    ```
 
 6.  A detailed information about the lastly submitted job can be obtained in the
     following way:
+    
+    ```
+    $ qcg-info
+    ...
+    J1559814286855_easyvvuq_pj_qcg_5894 :
+    Note:
+    UserDN: ****
+    TaskType: SINGLE
+    SubmissionTime: Thu Jun 06 11:44:47 CEST 2019
+    FinishTime: Thu Jun 06 11:45:18 CEST 2019
+    ProxyLifetime: P24DT23H48M33S
+    Status: FINISHED
+    StatusDesc:
+    StartTime: Thu Jun 06 11:44:47 CEST 2019
+    Purged: true
+    
+    Allocation:
+    HostName: eagle
+    ProcessesCount: 4
+    ProcessesGroupId: qcg
+    Status: FINISHED
+    StatusDescription:
+    SubmissionTime: Thu Jun 06 11:44:47 CEST 2019
+    FinishTime: Thu Jun 06 11:45:52 CEST 2019
+    LocalSubmissionTime: Thu Jun 06 11:44:52 CEST 2019
+    LocalStartTime: Thu Jun 06 11:45:02 CEST 2019
+    LocalFinishTime: Thu Jun 06 11:45:18 CEST 2019
+    Purged: true
+    WorkingDirectory: gsiftp://eagle.man.poznan.pl//tmp/lustre/plguser/J1559814286855_easyvvuq_pj_qcg_5894_task_1559814287294_978
+    ```
 
-| \$ qcg-info ... J1559814286855_easyvvuq_pj_qcg_5894 : Note: UserDN: \*\*\*\* TaskType: SINGLE SubmissionTime: Thu Jun 06 11:44:47 CEST 2019 FinishTime: Thu Jun 06 11:45:18 CEST 2019 ProxyLifetime: P24DT23H48M33S Status: FINISHED StatusDesc: StartTime: Thu Jun 06 11:44:47 CEST 2019 Purged: true Allocation: HostName: eagle ProcessesCount: 4 ProcessesGroupId: qcg Status: FINISHED StatusDescription: SubmissionTime: Thu Jun 06 11:44:47 CEST 2019 FinishTime: Thu Jun 06 11:45:52 CEST 2019 LocalSubmissionTime: Thu Jun 06 11:44:52 CEST 2019 LocalStartTime: Thu Jun 06 11:45:02 CEST 2019 LocalFinishTime: Thu Jun 06 11:45:18 CEST 2019 Purged: true WorkingDirectory: gsiftp://eagle.man.poznan.pl//tmp/lustre/plguser/J1559814286855_easyvvuq_pj_qcg_5894_task_1559814287294_978 |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-
-
-7.  When the job completes, the results are downloaded to results[JOB_ID]
+7.  When the job completes, the results are downloaded to `results[JOB_ID]`
     directory.
 
 Execution with QCG-Now
