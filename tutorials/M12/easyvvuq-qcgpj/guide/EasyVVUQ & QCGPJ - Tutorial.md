@@ -1,5 +1,5 @@
 # Uncertainty Quantification in Numerical Models: from simple model on Newton's law of cooling to multiscale fusion model
-#### Demonstration on efficient, parallel Execution of EasyVVUQ with QCG Pilot Job Manager on local and HPC resources (a step-by-step guide)
+### Demonstration on efficient, parallel Execution of EasyVVUQ with QCG Pilot Job Manager on local and HPC resources (a step-by-step guide)
 
 Contents
 ========
@@ -601,3 +601,13 @@ information of $$T_{\alpha}$$ is propagated into the equilibrium blackbox as
 inputs. The PCE method is applied again to get statistical analysis of the
 equilibrium code output. Ultimately we want to perform UQ to the entire
 multiscale workflow, which would mean many more samples are necessary.
+
+## References
+[^1]: https://wiki.vecma.eu/glossary
+[^2]: https://uncertainpy.readthedocs.io/en/latest/examples/coffee_cup.html
+[^3]: https://en.wikipedia.org/wiki/Polynomial_chaos
+[^4]: https://en.wikipedia.org/wiki/Variance-based_sensitivity_analysis
+[^5]: https://www.iter.org/
+[^6]: O.O. Luk, O. Hoenen, A. Bottino, B.D. Scott, D.P. Coster, “ComPat
+framework for multiscale simulations applied to fusion plasmas”, Computer
+Physics Communications (2019), https://doi.org/10.1016/j.cpc.2018.12.021.
