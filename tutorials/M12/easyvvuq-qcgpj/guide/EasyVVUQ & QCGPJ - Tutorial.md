@@ -180,7 +180,7 @@ check all parameters and make changes accordingly.
     Successfully installed virtualenv-16.6.0
     ```
 
-4.  If required, attend the warning from the previous step, add `\~/.local/bin` to
+4.  If required, attend the warning from the previous step, add `~/.local/bin` to
     the `PATH` environment variable and make it permanent by updating the `.bashrc`
     file.
     ```
@@ -399,9 +399,9 @@ make simple modification to the presented workflow before use.
 *This execution is possible only on a cluster with the SLURM queuing system. In
 this tutorial we assume that EasyVVUQ-QCGPJ has been configured on the Eagle
 cluster in the way as described in the section Installation of EasyVVUQ-QCGPJ
-and the tutorial files has been cloned into the* `\~/tutorial/VECMAtk.`
+and the tutorial files has been cloned into the* `~/tutorial/VECMAtk.`
 
-1.  Go into the `\~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/slurm_execution`
+1.  Go into the `~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/slurm_execution`
     ```
     $ cd ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/slurm_execution
     ```
@@ -459,14 +459,14 @@ tutorial we assume the usage of the QCG Client installed on qcg.man.poznan.pl
 and the Eagle cluster, which is a part of the PLGrid infrastructure. These two
 machines share the same $HOME directory where both EasyVVUQ-QCGPJ has been
 configured in the way described in the section Installation of EasyVVUQ-QCGPJ
-and the tutorial files has been cloned into the* `\~/tutorial/VECMAtk`.
+and the tutorial files has been cloned into the* `~/tutorial/VECMAtk`.
 
 1.  Login into the machine where qcg-client is installed:
     ```
     $ ssh user@qcg.man.poznan.pl
     ```
 
-2.  Go into the `\~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/qcg_execution`
+2.  Go into the `~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/qcg_execution`
     ```
     $ cd ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/qcg_execution
     ```
