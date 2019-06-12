@@ -16,7 +16,7 @@
     + [Execution using SLURM](#execution-using-slurm)
     + [Execution with QCG-Client](#execution-with-qcg-client)
     + [Execution with QCG-Now](#execution-with-qcg-now)
-  * [Example of a real multiscale application: Fusion](#example-of-a-real-multiscale-application--fusion)
+  * [Example of a real multiscale application: Fusion](#example-of-a-real-multiscale-application-fusion)
   * [References](#references)
 
 [TOC]
