@@ -393,9 +393,8 @@ make simple modification to the presented workflow before use.
 
 3.  Execute the workflow:  
     (Note that for the local execution we are using a slightly modified version
-    of the core workflow ((not from the `../app` folder)) - since we are going to
-    test this workflow locally, we define 4 virtual cores to demonstrate how QCG
-    Pilot Job Manager executes tasks in parallel.)
+    of the core workflow ((not from the `../app` folder)) - since we may test this workflow on a local computer without the queuing system allocation, we define 4 virtual cores to demonstrate how QCG
+    Pilot Job Manager executes tasks in parallel. However, be aware: when Pilot Job Manager is started as an interactive task in the allocation created by Slurm, it will override the settings of virtual resources by the actually allocated real resources. Thus, in order to test parallel execution on a cluster, you need to allocate at least 2 cores for your interactive job).
     ```
     (easyvvuq-qcgpj)$ python3 test_pce_pj.py
     ```
