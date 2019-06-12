@@ -573,7 +573,8 @@ task from QCG-Now are as follows:
     - Submission type: **Submit script**
     - In the opened textarea write:
     ```
-    . \~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh python3 test_pce_pj.py
+    . ~/tutorial/VECMAtk/tutorials/M12/easyvvuq-qcgpj/app/easypj_config.sh 
+    python3 test_pce_pj.py
     ```
     ![](images/qcg-now-4.png)
 
