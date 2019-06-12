@@ -10,7 +10,7 @@ assists users with the process of UQ on their numerical model.
 
 The sample physics model in this tutorial is inspired by the “cooling coffee cup
 model” from [^2]. A cup of coffee is placed inside some environment of
-temperature $$T_{\text{env}}$$. Consequently, the cup of coffee experiences heat
+temperature T~env~. Consequently, the cup of coffee experiences heat
 loss and its temperature $$T$$varies in time $$t$$, as described mathematically
 by the Newton’s law of cooling:
 
