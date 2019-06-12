@@ -16,13 +16,13 @@ by the Newton’s law of cooling:
 
 [^2]: https://uncertainpy.readthedocs.io/en/latest/examples/coffee_cup.html
 
-*dT(t)/dt=<sub>K</sub>(T(t) - T<sub>env</sub>)*,
+*dT(t)/dt=-K(T(t) - T<sub>env</sub>)*,
 
-where *<sub>K</sub>* is a constant that describes the system. The python script
+where *K* is a constant that describes the system. The python script
 pce_model.py, which is provided as part of the tutorial materials, takes the
-initial coffee temperature *T<sub>0</sub>*, *<sub>K</sub>* and *T<sub>env</sub>* and
+initial coffee temperature *T<sub>0</sub>*, *K* and *T<sub>env</sub>* and
 solve the above equation to find *T*. The quantity of interest here is *T*,
-but there are uncertainties to the inputs *<sub>K</sub>* and *T<sub>env</sub>*. The
+but there are uncertainties to the inputs *K* and *T<sub>env</sub>*. The
 goal here is to obtain the probability distribution of the measured value *T*,
 given that there are uncertainties to the inputs. Please note that, from this
 point forward, all quantities will be mentioned without explicit units.
@@ -30,7 +30,7 @@ point forward, all quantities will be mentioned without explicit units.
 We begin the UQ calculations to the model by defining lower and upper threshold
 values to a uniform distribution for both uncertain inputs:
 
-*0.025  <=  <sub>K</sub>  <=  0.075*, and
+*0.025  <=  K  <=  0.075*, and
 
 *15.0  <= T<sub>env</sub>  <=  25.0*.
 
@@ -53,7 +53,7 @@ schematic depicting the entire UQ procedure described above.
 
 UQ of the cooling coffee cup model: the EasyVVUQ-QCGPJ of the VECMAtk takes the
 uncertain inputs and produces statistical analysis to *T(t)*. The plots on the
-right are the calculated average temperature, standard deviation *< T(t) > sigma*, and variance (top plot); and the first order Sobol indices for the uncertain input parameters *<sub>K</sub>* and *T<sub>env</sub>* (bottom plot).
+right are the calculated average temperature, standard deviation *< T(t) > sigma*, and variance (top plot); and the first order Sobol indices for the uncertain input parameters *K* and *T<sub>env</sub>* (bottom plot).
 
 The rest of the tutorial will guide you through the toolkit installation and
 execution of this model. Before “running test_pce_pj.py”, please be sure to
