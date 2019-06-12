@@ -3,6 +3,22 @@
 
 ## Contents
 
+  * [Contents](#contents)
+  * [Preface](#preface)
+  * [Introduction](#introduction)
+  * [Application model for the tutorial](#application-model-for-the-tutorial)
+  * [Installation of EasyVVUQ-QCGPJ](#installation-of-easyvvuq-qcgpj)
+  * [Getting the tutorial materials](#getting-the-tutorial-materials)
+  * [Execution of EasyVVUQ with QCG Pilot Job](#execution-of-easyvvuq-with-qcg-pilot-job)
+    + [EasyVVUQ-QCGPJ workflow](#easyvvuq-qcgpj-workflow)
+    + [Common configuration before execution](#common-configuration-before-execution)
+    + [Local execution](#local-execution)
+    + [Execution using SLURM](#execution-using-slurm)
+    + [Execution with QCG-Client](#execution-with-qcg-client)
+    + [Execution with QCG-Now](#execution-with-qcg-now)
+  * [Example of a real multiscale application: Fusion](#example-of-a-real-multiscale-application--fusion)
+  * [References](#references)
+
 [TOC]
 
 ## Preface
@@ -91,9 +107,6 @@ piontek_at_man.poznan.pl.
 
 
 ## Application model for the tutorial
-
-Application model for the tutorial
-==================================
 
 To give users a sense of how EasyVVUQ-QCGPJ works, we provide a simple cooling
 coffee cup model as a test application throughout the entire tutorial. This
@@ -527,8 +540,7 @@ and the tutorial files has been cloned into the* `~/tutorial/VECMAtk`.
 7.  When the job completes, the results are downloaded to `results[JOB_ID]`
     directory.
 
-Execution with QCG-Now
-----------------------
+### Execution with QCG-Now
 
 *At this moment QCG-Now allows users to submit jobs to PLGrid clusters only,
 thus in order to use the tool, an account with PLGrid is mandatory. As before,
@@ -599,8 +611,7 @@ task from QCG-Now are as follows:
     or
     ![](images/qcg-now-10.png)
 
-Example of a real multiscale application: Fusion
-================================================
+## Example of a real multiscale application: Fusion
 
 There are many natural and physical phenomena considered as multi-scale
 processes. One of such phenomena is the thermonuclear fusion reaction. To
