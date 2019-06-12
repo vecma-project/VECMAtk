@@ -18,27 +18,27 @@ by the Newton’s law of cooling:
 
 dT(t)/dt=<sub>K</sub>(T(t) - T<sub>env</sub>),
 
-where $$\kappa$$ is a constant that describes the system. The python script
+where <sub>K</sub> is a constant that describes the system. The python script
 pce_model.py, which is provided as part of the tutorial materials, takes the
-initial coffee temperature $$T_{0}$$, $$\kappa$$ and $$T_{\text{env}}$$ and
-solve the above equation to find $$T$$. The quantity of interest here is $$T$$,
-but there are uncertainties to the inputs $$\kappa$$ and $$T_{\text{env}}$$. The
-goal here is to obtain the probability distribution of the measured value $$T$$,
+initial coffee temperature T<sub>0</sub>, <sub>K</sub> and T<sub>env</sub> and
+solve the above equation to find T. The quantity of interest here is T,
+but there are uncertainties to the inputs <sub>K</sub> and T<sub>env</sub>. The
+goal here is to obtain the probability distribution of the measured value T,
 given that there are uncertainties to the inputs. Please note that, from this
 point forward, all quantities will be mentioned without explicit units.
 
 We begin the UQ calculations to the model by defining lower and upper threshold
 values to a uniform distribution for both uncertain inputs:
 
-$$0.025\  \leq \kappa\  \leq 0.075$$, and
+$$0.025  <=  <sub>K</sub>  <=  0.075$$, and
 
-$$15.0\  \leq T_{\text{env}} \leq 25.0$$.
+$$15.0  <= T<sub>env</sub>  <=  25.0$$.
 
-The initial coffee temperature $$T_{0}$$ is set to be 95.0, and the calculation
-runs from $$t = 0$$ to $$t = 200$$. At the end of the simulation, we defined two
-extra parameters $$T_{e}$$ and $$T_{i}$$, with $$T_{e}\  \equiv T$$ and $$T_{i}\
-\equiv \  - T$$. We select the Polynomial Chaos Expansion[^3] PCE method with
-1st order polynomial, which would result in $$(1 + 2)^{2}$$ or 9 sample runs. A
+The initial coffee temperature T<sub>0</sub> is set to be 95.0, and the calculation
+runs from *t=0* to *t=200*. At the end of the simulation, we defined two
+extra parameters T<sub>e</sub> and T<sub>i</sub>, with T<sub>e</sub>  identically equal to T and T<sub>i</sub>
+identically equal to -T. We select the Polynomial Chaos Expansion[^3] PCE method with
+1st order polynomial, which would result in (1 + 2)<sup>2<sup> or 9 sample runs. A
 python script is provided in the tutorial material “test_pce_pj.py”, showcasing
 how EasyVVUQ-QCGPJ takes the input parameters and handle all sample calculations
 in an efficient manner, and provides statistical analysis to the outputs
@@ -52,10 +52,8 @@ schematic depicting the entire UQ procedure described above.
 ![](media/3e3df0f30600f1c35825e952a384b027.png)
 
 UQ of the cooling coffee cup model: the EasyVVUQ-QCGPJ of the VECMAtk takes the
-uncertain inputs and produces statistical analysis to $$T(t)$$. The plots on the
-right are the calculated average temperature, standard deviation $$< T(t) > \pm
-\sigma$$, and variance (top plot); and the first order Sobol indices for the
-uncertain input parameters $$\kappa$$ and $$T_{\text{env}}$$ (bottom plot).
+uncertain inputs and produces statistical analysis to T(t). The plots on the
+right are the calculated average temperature, standard deviation *< T(t) > sigma*, and variance (top plot); and the first order Sobol indices for the uncertain input parameters <sub>K</sub> and T<sub>env</sub> (bottom plot).
 
 The rest of the tutorial will guide you through the toolkit installation and
 execution of this model. Before “running test_pce_pj.py”, please be sure to
