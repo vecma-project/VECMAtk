@@ -121,11 +121,10 @@ by the Newton’s law of cooling:
 where *K* is a constant that describes the system. The python script
 pce_model.py, which is provided as part of the tutorial materials, takes the
 initial coffee temperature *T<sub>0</sub>*, *K* and *T<sub>env</sub>* and
-solve the above equation to find *T*. The quantity of interest here is *T*,
-but there are uncertainties to the inputs *K* and *T<sub>env</sub>*. The
-goal here is to obtain the probability distribution of the measured value *T*,
-given that there are uncertainties to the inputs. Please note that, from this
-point forward, all quantities will be mentioned without explicit units.
+solve the above equation to find *T*. Since there are uncertainties to the inputs 
+*K* and *T<sub>env</sub>*, the goal is to take the uncertain inputs into consideration 
+when obtaining the probability distribution of the measured value *T*. Please note that, 
+from this point forward, all quantities will be mentioned without explicit units.
 
 We begin the UQ calculations to the model by defining lower and upper threshold
 values to a uniform distribution for both uncertain inputs:
