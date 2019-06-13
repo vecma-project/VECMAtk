@@ -36,7 +36,7 @@ learn about the following VECMA software components:
     + [Execution using SLURM](#execution-using-slurm)
     + [Execution with QCG-Client](#execution-with-qcg-client)
     + [Execution with QCG-Now](#execution-with-qcg-now)
-  * [Example of a real multiscale application: Fusion](#example-of-a-real-multiscale-application-fusion)
+  * [Uncertainty in a multiscale application: Fusion](#uncertainty-in-a-multiscale-application-fusion)
   * [References](#references)
 
 ## Introduction 
@@ -609,7 +609,7 @@ task from QCG-Now are as follows:
     or
     ![](images/qcg-now-10.png)
 
-## Example of a real multiscale application: Fusion
+## Uncertainty in a multiscale application: Fusion
 
 There are many natural and physical phenomena considered as multi-scale
 processes. One of such phenomena is the thermonuclear fusion reaction. To
