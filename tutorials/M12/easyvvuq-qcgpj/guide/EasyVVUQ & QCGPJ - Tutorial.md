@@ -1,22 +1,6 @@
 # Uncertainty Quantification in Numerical Models: from simple model on Newton's law of cooling to multiscale fusion model
 ### Demonstration on efficient, parallel Execution of EasyVVUQ with QCG Pilot Job Manager on local and HPC resources (a step-by-step guide)
 
-## Contents
-  * [Preface](#preface)
-  * [Introduction](#introduction)
-  * [Application model for the tutorial](#application-model-for-the-tutorial)
-  * [Installation of EasyVVUQ-QCGPJ](#installation-of-easyvvuq-qcgpj)
-  * [Getting the tutorial materials](#getting-the-tutorial-materials)
-  * [Execution of EasyVVUQ with QCG Pilot Job](#execution-of-easyvvuq-with-qcg-pilot-job)
-    + [EasyVVUQ-QCGPJ workflow](#easyvvuq-qcgpj-workflow)
-    + [Common configuration before execution](#common-configuration-before-execution)
-    + [Local execution](#local-execution)
-    + [Execution using SLURM](#execution-using-slurm)
-    + [Execution with QCG-Client](#execution-with-qcg-client)
-    + [Execution with QCG-Now](#execution-with-qcg-now)
-  * [Example of a real multiscale application: Fusion](#example-of-a-real-multiscale-application-fusion)
-  * [References](#references)
-
 ## Preface
 
 In this tutorial, you will get a step-by-step guidance on the usage of several
@@ -38,6 +22,21 @@ software components:
 -   [QCG-Client](http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide) - a command line client for execution of computing jobs on the clusters offered by QCG middleware,
 -   [QCG-Now](http://www.qoscosgrid.org/qcg-now/en/) - a desktop, GUI client for
     easy execution of computing jobs on the clusters offered by QCG middleware.
+
+## Contents
+  * [Introduction](#introduction)
+  * [Application model for the tutorial](#application-model-for-the-tutorial)
+  * [Installation of EasyVVUQ-QCGPJ](#installation-of-easyvvuq-qcgpj)
+  * [Getting the tutorial materials](#getting-the-tutorial-materials)
+  * [Execution of EasyVVUQ with QCG Pilot Job](#execution-of-easyvvuq-with-qcg-pilot-job)
+    + [EasyVVUQ-QCGPJ workflow](#easyvvuq-qcgpj-workflow)
+    + [Common configuration before execution](#common-configuration-before-execution)
+    + [Local execution](#local-execution)
+    + [Execution using SLURM](#execution-using-slurm)
+    + [Execution with QCG-Client](#execution-with-qcg-client)
+    + [Execution with QCG-Now](#execution-with-qcg-now)
+  * [Example of a real multiscale application: Fusion](#example-of-a-real-multiscale-application-fusion)
+  * [References](#references)
 
 ## Introduction 
 
