@@ -103,11 +103,15 @@ piontek_at_man.poznan.pl.
 
 ## Application model for the tutorial
 
-To give users a sense of how EasyVVUQ-QCGPJ works, we provide a simple cooling
+To give readers a sense of how EasyVVUQ-QCGPJ works, we provide a simple cooling
 coffee cup model as a test application throughout the entire tutorial. This
 allows users to quickly grasp the concept behind the model so they can put their
 attention towards the functionality of EasyVVUQ with QCG-PJ, and how the toolkit
-assists users with the process of UQ on their numerical model.
+assists users with the process of UQ on their numerical model.  In reality, many 
+types of numerical codes can also benefit from EasyVVUQ with QCG-PJ.  Multiscale 
+fusion modeling, for example, uses the same software to apply UQ.  To learn more 
+about the multiscale fusion model and how the toolkit helps in quantifying 
+uncertanties, please refer to the last section of the tutorial.
 
 The sample physics model in this tutorial is inspired by the “cooling coffee cup
 model” from <sup>[2](#fn2)</sup>. A cup of coffee is placed inside some environment of
