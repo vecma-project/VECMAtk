@@ -8,9 +8,9 @@ VECMAtk components to perform uncertainty quantification calculations within a
 local and HPC execution environment. A simple numerical model that simulates the
 temperature of a coffee cup under the Newton’s law of cooling is provided here
 as an example application, but the general scheme of conduct can be practiced in
-any application. An example on uncertainty quantification in a multiscale fusion 
-application using the VECMAtk is included as well.  In this tutorial you will 
-learn about the following VECMA software components:
+any application. To show that, we will also discuss the usage of VECMAtk to 
+quantify uncertainties in a multiscale fusion application.  In this tutorial you 
+will learn about the following VECMA software components:
 
 -   [EasyVVUQ](https://github.com/UCL-CCS/EasyVVUQ) - a Python3 library that
     aims to facilitate verification, validation and uncertainty quantification,
