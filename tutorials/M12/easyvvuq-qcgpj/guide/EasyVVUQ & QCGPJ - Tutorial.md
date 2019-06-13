@@ -41,7 +41,7 @@ learn about the following VECMA software components:
 
 ## Introduction 
 
-As the performance of supercomputers become more powerful, it also turns into a
+As the performance of supercomputers becomes more powerful, it also turns into a
 driving force for the science and engineering communities to construct
 computational models of higher complexities. These models can help explore
 sciences that were previously restricted by the computing powers of
