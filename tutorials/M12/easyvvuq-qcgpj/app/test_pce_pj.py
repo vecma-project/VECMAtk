@@ -71,15 +71,17 @@ def test_pce_pj(tmpdir):
     decoder = uq.decoders.SimpleCSV(target_filename=output_filename,
                                     output_columns=output_columns,
                                     header=0)
-    collation = uq.collate.AggregateSamples(average=False)
 
     # Add the PCE app (automatically set as current app)
     my_campaign.add_app(name="pce",
                         params=params,
                         encoder=encoder,
-                        decoder=decoder,
-                        collation=collation
+                        decoder=decoder
                         )
+
+    # Create a collation element for this campaign
+    collater = uq.collate.AggregateSamples(average=False)
+    my_campaign.set_collater(collater)
 
     # Create the sampler
     vary = {
@@ -165,27 +167,20 @@ def test_pce_pj(tmpdir):
 
     # Get Descriptive Statistics
     stats = results['statistical_moments']['te']
-    per = results['percentiles']['te']
-    sobols = results['sobol_indices']['te'][1]
-    dist_out = results['output_distributions']['te']
+    sobols = results['sobols_first']['te']
 
     print("Stats: ")
     print(stats)
-    print("Percentiles: ")
-    print(per)
     print("Sobols: ")
     print(sobols)
-    print("Output distribution: ")
-    print(dist_out)
 
     print("Processing completed")
-    return stats, per, sobols, dist_out
 
 
 if __name__ == "__main__":
     start_time = time.time()
 
-    stats, per, sobols, dist_out = test_pce_pj(os.getcwd())
+    test_pce_pj(os.getcwd())
 
     end_time = time.time()
     print('>>>>> elapsed time = ', end_time - start_time)
