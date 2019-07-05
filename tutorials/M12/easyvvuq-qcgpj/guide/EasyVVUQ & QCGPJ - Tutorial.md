@@ -174,8 +174,15 @@ check all parameters and make changes accordingly.
     $ module load python/3.7.3 
     $ python3 -V Python 3.7.3
     ```
+    
+3.  Add `~/.local/bin` to your `$PATH` environment variable (if it is not yet already there)
+    and make it permanent by updating the `.bashrc` file.
+    ```
+    $ export PATH=/home/plgrid/user/.local/bin:$PATH
+    $ echo 'PATH=/home/plgrid/user/.local/bin:$PATH' >> .bashrc
+    ```
 
-3.  Check if *virtualenv* is installed on your system and if not install it
+4.  Check if *virtualenv* is installed on your system and if not install it.
     ```
     $ virtualenv --version
     bash: virtualenv: command not found
@@ -187,19 +194,11 @@ check all parameters and make changes accordingly.
       The script virtualenv is installed in '/home/plgrid/user/.local/bin' which is not on PATH.
       Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
     Successfully installed virtualenv-16.6.0
-    ```
-
-4.  If required, attend the warning from the previous step, add `~/.local/bin` to
-    the `PATH` environment variable and make it permanent by updating the `.bashrc`
-    file.
-    ```
-    $ export PATH=/home/plgrid/user/.local/bin:$PATH
-    $ echo 'PATH=/home/plgrid/user/.local/bin:$PATH' >> .bashrc
     $ virtualenv --version
     16.6.0
     ```
 
-5.  Create *virtualenv* for the EasyVVUQ with QCG-PJ support:
+5.  Create *virtualenv* for the EasyVVUQ with QCG-PJ support.
     ```
     $ virtualenv ~/.virtualenvs/easyvvuq-qcgpj
     Using base prefix '/opt/exp_soft/local/generic/python/3.7.3'
