@@ -127,7 +127,7 @@ def test_cooling_pj(tmpdir):
         exec_args = [
             run_dir,
             'easyvvuq_app',
-            cooling_app_dir + "/cooling_model.py", "cooling_in.json"
+            'python3 ' + cooling_app_dir + "/cooling_model.py", "cooling_in.json"
         ]
 
         encode_job = {
