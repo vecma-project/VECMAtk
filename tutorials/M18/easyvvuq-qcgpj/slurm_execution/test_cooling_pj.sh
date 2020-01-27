@@ -22,7 +22,7 @@
 #SBATCH --partition=fast
 
 ## grant
-#SBATCH --account=vecma2019
+#SBATCH --account=vecma2020
 
 . ~/tutorial/VECMAtk/tutorials/M18/easyvvuq-qcgpj/app/easypj_config.sh
 
