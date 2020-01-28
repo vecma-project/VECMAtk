@@ -93,31 +93,42 @@ def test_cooling_pj():
     # Associate the sampler with the campaign
     my_campaign.set_sampler(my_sampler)
 
-    # Will draw all (of the finite set of samples)
+    print("Generating samples")
+    # Will draw all (of the finite set of) samples
     my_campaign.draw_samples()
 
-    print("Starting execution")
+    print("Initialising EasyPJ Executor")
+    # Create EasyVVUQ-QCGPJ Executor that will process the execution
     qcgpjexec = easypj.Executor()
 
-    # Create QCG PJ-Manager with 4 cores
-    # (if you want to use all available resources remove resources parameter)
-    qcgpjexec.create_manager(dir=my_campaign.campaign_dir, resources='4')
+    # Create QCG PJ-Manager that will utilise all available resources.
+    # Refer to the documentation for customisation options.
+    qcgpjexec.create_manager(dir=my_campaign.campaign_dir)
 
+    # Define ENCODING task that will be used for execution of encodings using encoders specified by EasyVVUQ.
+    # The presented specification of 'TaskRequirements' assumes the execution of each of the tasks on 1 core.
     qcgpjexec.add_task(Task(
         TaskType.ENCODING,
         TaskRequirements(cores=Resources(exact=1))
     ))
 
+    # Define EXECUTION task that will be used for the actual execution of application.
+    # The presented specification of 'TaskRequirements' assumes the execution of each of the tasks on 4 cores.
+    # Each task will execute the command provided in the 'application' parameter.
     qcgpjexec.add_task(Task(
         TaskType.EXECUTION,
         TaskRequirements(cores=Resources(exact=4)),
         application='python3 ' +  APPLICATION + " " + ENCODED_FILENAME
     ))
 
+    print("Starting the execution of QCG Pilot Job tasks")
+    # Execute encodings and executions for all generated samples
     qcgpjexec.run(
         campaign=my_campaign,
         submit_order=SubmitOrder.RUN_ORIENTED)
 
+    # Terminate QCG PJ-Manager
+    print("Completing the execution")
     qcgpjexec.terminate_manager()
 
     print("Collating results")
