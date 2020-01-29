@@ -330,16 +330,17 @@ We can distinguish the following key elements from this script:
 
 -   Typical initialisation of a Campaign and generation of samples. 
 
--   Instantiation of EasyVVUQ-QCGPJ Executor.
+-   Instantiation of EasyVVUQ-QCGPJ Executor (`easypj.Executor()`).
 
 -   Set up of the QCG PJ Manager instance using the Executor's `create_manager` method. 
 
 -   Definition of tasks for Encoding and Execution steps of EasyVVUQ that will be
     executed as QCG Pilot Job tasks. Each definition of task includes the specification
-    of resource requirements that the task consume. 
+    of resource requirements that the task consume. The tasks are added to the Executor
+    using the `add_task` method. 
 
 -   Parallel processing of the encodings and executions with QCG Pilot Job 
-    using a predefined scheme of submission (`SubmitOrder`).
+    using a predefined scheme of submission (`SubmitOrder`) initiated by the `run` method.
 
 -   Termination of QCG PJ Manager using the Executor's `terminate_manager` method.
 
