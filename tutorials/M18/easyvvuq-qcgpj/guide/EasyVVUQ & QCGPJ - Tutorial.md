@@ -613,9 +613,9 @@ task from QCG-Now are as follows:
 #### QCG-Monitoring (Experimental)
 In order to provide users with the functionality of live monitoring of their tasks, QCG-Now has been 
 experimentally integrated with the QCG-Monitoring solution. This integration allows to
-display basic data about the users tasks directly in QCG-Now. Currently, for the easyvvuq-qcgpj
-application the monitoring provides generic information about Pilot Job execution, but it will be
-tuned for specifics of EasyVVUQ in a near future. 
+display basic data about users tasks directly in QCG-Now. Currently, for the easyvvuq-qcgpj
+application, the monitoring provides generic information about the Pilot Job execution, but it will be
+tuned for specifics of EasyVVUQ in the near future. 
 
 In order to switch on the monitoring for a task, a user needs to enable **QCG-Monitoring portal** 
 in the **Monitoring** tab of the New Task window:
