@@ -549,7 +549,7 @@ When installed and configured, the steps to submit an EasyVVUQ / QCG Pilot Job
 task from QCG-Now are as follows:
 
 1.  Get the tutorial files using GIT or download them zipped from
-    <https://github.com/vecma-project/VECMAtk/archive/m18.zip> - then extract
+    <https://github.com/vecma-project/VECMAtk/archive/master.zip> - then extract
     the files.
 
 2.  In the main window of QCG-Now click "+"
