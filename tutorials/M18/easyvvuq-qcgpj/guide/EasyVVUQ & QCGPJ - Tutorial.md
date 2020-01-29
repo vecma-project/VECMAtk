@@ -123,7 +123,7 @@ by the Newton’s law of cooling:
 *dT(t)/dt=-K(T(t) - T<sub>env</sub>)*,
 
 where *K* is a constant that describes the system. The python script
-pce_model.py, which is provided as part of the tutorial materials, takes the
+cooling_model.py, which is provided as part of the tutorial materials, takes the
 initial coffee temperature *T<sub>0</sub>*, *K* and *T<sub>env</sub>* and
 solve the above equation to find *T*. Since there are uncertainties to the inputs 
 *K* and *T<sub>env</sub>*, the goal is to take the uncertain inputs into consideration 
@@ -142,7 +142,7 @@ runs from *t=0* to *t=200*. At the end of the simulation, we defined two
 extra parameters *T<sub>e</sub>* and *T<sub>i</sub>*, with *T<sub>e</sub>* identically equal to *T* and *T<sub>i</sub>*
 identically equal to *-T*. We select the Polynomial Chaos Expansion<sup>[3](#fn3)</sup> PCE method with
 1st order polynomial, which would result in (1 + 2)<sup>2</sup> or 9 sample runs. A
-python script is provided in the tutorial material “test_pce_pj.py”, showcasing
+python script is provided in the tutorial material “test_cooling_pj.py”, showcasing
 how EasyVVUQ-QCGPJ takes the input parameters and handle all sample calculations
 in an efficient manner, and provides statistical analysis to the outputs
 *T(t)* (i.e. mean, standard deviation, variance, Sobol indices<sup>[4](#fn4)</sup>). Here is a
@@ -155,7 +155,7 @@ uncertain inputs and produces statistical analysis to *T(t)*. The plots on the
 right are the calculated average temperature, standard deviation, and variance (top plot); and the first order Sobol indices for the uncertain input parameters *K* and *T<sub>env</sub>* (bottom plot).
 
 The rest of the tutorial will guide you through the toolkit installation and
-execution of this model. Before “running test_pce_pj.py”, please be sure to
+execution of this model. Before “running test_cooling_pj.py”, please be sure to
 check all parameters and make changes accordingly.
 
 ## Installation of EasyVVUQ-QCGPJ
@@ -278,11 +278,11 @@ EasyVVUQ-QCGPJ works, please go to:
 The workflow constructed for uncertainty quantification of a cooling coffee cup
 is available in:
 
-`~/tutorial/VECMAtk/tutorials/M18/easyvvuq-qcgpj/app/test_pce_pj.py`
+`~/tutorial/VECMAtk/tutorials/M18/easyvvuq-qcgpj/app/test_cooling_pj.py`
 
 Considerably simplified, it looks as follows:
 ```python3
-def test_pce_pj(tmpdir):
+def test_cooling_pj():
 
     # Set up a fresh campaign called "cooling"
     my_campaign = uq.Campaign(name='cooling', work_dir=tmpdir)
@@ -395,7 +395,7 @@ step begins. In that case, the only required modification is to change the value
     resources should be larger than the requirements of any of the tasks, otherwise the demanding tasks
     will be blocked in the queue).
     ```
-    (easyvvuq-qcgpj)$ python3 test_pce_pj.py
+    (easyvvuq-qcgpj)$ python3 test_cooling_pj.py
     ```
 
 4.  When processing completes, check results produced by EasyVVUQ.
@@ -412,11 +412,11 @@ and the tutorial files has been cloned into the* `~/tutorial/VECMAtk.`
     $ cd ~/tutorial/VECMAtk/tutorials/M18/easyvvuq-qcgpj/slurm_execution
     ```
 
-2.  Adjust the SLURM job description file: `test_pce_pj.sh`.
+2.  Adjust the SLURM job description file: `test_cooling_pj.sh`.
 
 3.  Submit the workflow as a SLURM batch job:
     ```
-    $ sbatch test_pce_pj.sh
+    $ sbatch test_cooling_pj.sh
     Submitted batch job 11094963
     ```
 
@@ -477,15 +477,15 @@ and the tutorial files has been cloned into the* `~/tutorial/VECMAtk`.
     $ cd ~/tutorial/VECMAtk/tutorials/M18/easyvvuq-qcgpj/qcg_execution
     ```
 
-3.  Adjust QCG job description file: `test_pce_pj.qcg`.
+3.  Adjust QCG job description file: `test_cooling_pj.qcg`.
 
 4.  Submit the workflow as a QCG batch job (you may be asked to provide your
     personal certificate credentials):
     ```
-    $ qcg-sub test_pce_pj.qcg
+    $ qcg-sub test_cooling_pj.qcg
     Enter GRID pass phrase for this identity:
     ...
-    test_pce_pj.qcg {}      jobId = J1559813849509_easyvvuq_pj_qcg_4338
+    test_cooling_pj.qcg {}      jobId = J1559813849509_easyvvuq_pj_qcg_4338
     ```
 
 5.  You can list and check the status of QCG jobs with:
@@ -542,14 +542,14 @@ we assume the usage of Eagle.*
 The installation, configuration and basic usage of QCG-Now is described here:  
 <http://www.qoscosgrid.org/qcg-now/en/instructions/firststeps/elementary>
 
-During the configuration you should select PLGrid as a domain and then whenever
+During the configuration you should select **VECMA** as a domain and then whenever
 QCG-Now asks about user ID/password you should provide your PLGrid credentials.
 
 When installed and configured, the steps to submit an EasyVVUQ / QCG Pilot Job
 task from QCG-Now are as follows:
 
 1.  Get the tutorial files using GIT or download them zipped from
-    <https://github.com/vecma-project/VECMAtk/archive/master.zip> - then extract
+    <https://github.com/vecma-project/VECMAtk/archive/m18.zip> - then extract
     the files.
 
 2.  In the main window of QCG-Now click "+"
@@ -561,20 +561,20 @@ task from QCG-Now are as follows:
 
     ![](images/qcg-now-2.png)
 
-4.  Drag&drop the /tutorials/M18/easyvvuq-qcgpj/app/test_pce_pj.py file from the
+4.  Drag&drop the /tutorials/M18/easyvvuq-qcgpj/app/test_cooling_pj.py file from the
     extracted zip file into "DROP FILES HERE" space:
     
     ![](images/qcg-now-3.png)
 
 5.  In the Properties tab select:
-    - Application: **bash**
+    - Application: **easyvvuq-qcgpj**
     - Task Name: EasyVVUQ test
     - Grant: leave blank to use a default one or select another
     - Submission type: **Submit script**
     - In the opened textarea write:
     ```
     . ~/tutorial/VECMAtk/tutorials/M18/easyvvuq-qcgpj/app/easypj_config.sh 
-    python3 test_pce_pj.py
+    python3 test_cooling_pj.py
     ```
     ![](images/qcg-now-4.png)
 
@@ -594,8 +594,14 @@ task from QCG-Now are as follows:
 7.  When submitted, the task is added to the list of tasks in the main window,
     where it is possible to track the state and progress of its execution in two
     complementary views:
+    
+    The **Tabular** view:
     ![](images/qcg-now-7.png)
+    
+    The **Task's Details** view:
     ![](images/qcg-now-8.png)
+    
+    The views can be switched by double-clicking on a task.
 
 2.  When the task completes successfully, the output data is transferred back to
     a user's computer and user can open a directory with results using one of
@@ -603,6 +609,21 @@ task from QCG-Now are as follows:
     ![](images/qcg-now-9.png)
     or
     ![](images/qcg-now-10.png)
+    
+#### QCG-Monitoring (Experimental)
+In order to provide users with the functionality of live monitoring of their tasks, QCG-Now has been 
+experimentally integrated with the QCG-Monitoring solution. This integration allows to
+display basic data about the users tasks directly in QCG-Now. Currently, for the easyvvuq-qcgpj
+application the monitoring provides generic information about Pilot Job execution, but it will be
+tuned for specifics of EasyVVUQ in a near future. 
+
+In order to switch on the monitoring for a task, a user needs to enable **QCG-Monitoring portal** 
+in the **Monitoring** tab of the New Task window:
+![](images/qcg-now-11.png)
+
+Once the easyvvuq-qcgpj application starts it is possible to use a dedicated **Monitoring** tab 
+of the *Task's Details* view to display monitored information:
+![](images/qcg-now-12.png)
 
 ## Uncertainty in a multiscale application: Fusion
 
