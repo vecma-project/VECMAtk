@@ -17,8 +17,8 @@ VECMAtk Tutorial Links
 
 * FabUQCampaign:
 
-  * 2D ocean model: https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ocean.md
-  * Stochastic Collocation: https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ADE.md
+  * OCEAN2d: https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ocean.md
+  * ADE: https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ADE.md
 
 
 3. **QCG**
