@@ -13,6 +13,8 @@ VECMAtk Tutorial Links
 
 2. **EasyVVUQ**: https://easyvvuq.readthedocs.io/en/latest/
 
+* EasyVVUQ-QCGPJ: https://github.com/vecma-project/EasyVVUQ-QCGPJ/blob/master/tutorials/cooling_cup/guide/README.md
+
 * FabMD: https://github.com/UCL-CCS/FabMD/blob/master/doc/EasyVVUQ_FabMD_example.md
 
 * FabUQCampaign:
@@ -21,6 +23,8 @@ VECMAtk Tutorial Links
   * ADE: https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ADE.md
 
 
-3. **QCG**
+3. **QCG**: http://www.qoscosgrid.org
 
 * QCG-PilotJob: https://github.com/vecma-project/QCG-PilotJob/blob/master/README.md
+* QCG-Now: http://www.qoscosgrid.org/qcg-now/en/instructions/
+* QCG-Client: http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide
