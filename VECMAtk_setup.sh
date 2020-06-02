@@ -2,12 +2,12 @@
 
 # check OS version
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-		echo "OS type = Linux"
-        curlcmd="curl -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+	echo "OS type = Linux"
+	curlcmd="curl -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-        # Mac OSX
-        echo "OS type = Mac OSX"
-        curlcmd="curl -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
+	# Mac OSX
+	echo "OS type = Mac OSX"
+	curlcmd="curl -o miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
 fi
 
 
@@ -44,12 +44,13 @@ export PYTHONPATH=$PWD/FabSim3:$PWD/VirtualEnv
 
 EOF
 
+
 # load VirtualEnv
 eval "$(VirtualEnv/bin/conda shell.bash hook)"
 
+
 # update pip version if it is needed
 python -m pip install --upgrade pip
-
 
 
 # EasyVVUQ installation
@@ -86,6 +87,30 @@ pip install muscle3
 # QCG PilotJob Manager installation
 pip install --upgrade git+https://github.com/vecma-project/QCG-PilotJob.git
 
+# QCG Now installation
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	curlcmd="curl -o QCG-Now.tar.bz2 http://www.qoscosgrid.org/qcg-now/resources/downloads/current/QCG-Now-linux-1.4.1-1.tar.bz2"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	# Mac OSX
+	curlcmd="curl -o QCG-Now.tar.bz2 http://www.qoscosgrid.org/qcg-now/resources/downloads/current/QCG-Now-osx-1.4.1-1.tar.bz2"
+fi
+if [ ! -f QCG-Now.tar.bz2 ]; then
+	echo "Downloading QCG-Now ..."
+	eval $curlcmd
+	
+fi
+
+if [ ! -d QCG-Now ]; then
+	mkdir QCG-Now
+	tar xvf QCG-Now.tar.bz2 -C QCG-Now
+
+	chmod +x QCG-Now/bin/java
+	chmod +x QCG-Now/bin/QCG-Now
+	QCG-Now/bin/QCG-Now
+fi
+
+
+
 read -d '' guide << EOF
 VECMAtk installation is DONE ...
 to load the VirtualEnv, please type
@@ -97,4 +122,5 @@ echo "$guide"
 
 
 conda deactivate 
+
 
