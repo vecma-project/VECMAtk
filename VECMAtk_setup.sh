@@ -85,7 +85,8 @@ pip install muscle3
 
 
 # QCG PilotJob Manager installation
-pip install --upgrade git+https://github.com/vecma-project/QCG-PilotJob.git
+# pip install --upgrade git+https://github.com/vecma-project/QCG-PilotJob.git
+pip install qcg-pilotjob
 
 # QCG Now installation
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
