@@ -12,27 +12,26 @@ The links to the detailed tutorials for VECMAtk components and applications are 
 
 2. [**EasyVVUQ**](https://easyvvuq.readthedocs.io/en/dev/index.html) is a Python library designed to facilitate verification, validation and uncertainty quantification (VVUQ) for a wide variety of simulations. It accounts for uncertainty quantification (UQ) and validation patterns in application to  earlier described domains.
 
-**UQ Sampling techniques and tutorials**
-There are four different types of uncertainty quantification samplers in EasyVVUQ. 
+   **UQ Sampling techniques and tutorials**
+   There are four different types of uncertainty quantification samplers in EasyVVUQ. 
 
-- Stochastic Collocation (SC) sampler examples:
+   - Stochastic Collocation (SC) sampler examples:
 
-  - [Advection Diffusion Equation](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ADE.md) (ADE) using FabUQCampaign plugin;
-  - [Two-dimensional ocean model](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ocean.md) (Ocean2D) using FabUQCampaign plugin;
-  - [Flee algorithm sensitivity analysis](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialSensitivity.md) using FabFlee plugin.
+     - [Advection Diffusion Equation](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ADE.md) (ADE) using FabUQCampaign plugin;
+     - [Two-dimensional ocean model](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ocean.md) (Ocean2D) using FabUQCampaign plugin;
+     - [Flee algorithm sensitivity analysis](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialSensitivity.md) using FabFlee plugin.
      
-- Polynomial Chaos Expansion (PCE) sampler has an example tutorial in application to the Fusion workflow, see [here](https://github.com/UCL-CCS/EasyVVUQ/blob/dev/docs/fusion_tutorial.rst).
+   - Polynomial Chaos Expansion (PCE) sampler has an example tutorial in application to the Fusion workflow, see [here](https://github.com/UCL-CCS/EasyVVUQ/blob/dev/docs/fusion_tutorial.rst).
 
-- Random Sampler is also available and has an example of ensemble of [LAMMPS simulations](https://github.com/UCL-CCS/FabMD/blob/master/doc/EasyVVUQ_FabMD_example.md) using FabMD plugin.
+   - Random Sampler is also available and has an example of ensemble of [LAMMPS simulations](https://github.com/UCL-CCS/FabMD/blob/master/doc/EasyVVUQ_FabMD_example.md) using FabMD plugin.
      
-- Latin Hypercube technique is applied in an earthquake model in the FabMogp plugin, see [here](https://github.com/edaub/vecma_workshop_tutorial/blob/master/Tutorial.rst).
+  - Latin Hypercube technique is applied in an earthquake model in the FabMogp plugin, see [here](https://github.com/edaub/vecma_workshop_tutorial/blob/master/Tutorial.rst).
 
+  **Validation pattern tutorials**
+  Currently, there are two example tutorials available on validation:
 
-**Validation pattern tutorials**
-Currently, there are two example tutorials available on validation:
-
-- [Ensemble Output validation](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialValidate.md) in application to the FabFlee plugin;
-- [Quantity of interest distribution](https://github.com/UCL-CCS/https://github.com/UCL-CCS/EasyVVUQ/blob/dev/docs/validate_similarities.rst) extraction in application to Fusion application.     
+  - [Ensemble Output validation](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialValidate.md) in application to the FabFlee plugin;
+  - [Quantity of interest distribution](https://github.com/UCL-CCS/https://github.com/UCL-CCS/EasyVVUQ/blob/dev/docs/validate_similarities.rst) extraction in application to Fusion application.     
 
 
 3. **QCG**: http://www.qoscosgrid.org
