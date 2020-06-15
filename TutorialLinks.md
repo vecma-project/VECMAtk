@@ -33,14 +33,13 @@ The links to the detailed tutorials for VECMAtk components and applications are 
    - [Ensemble Output validation](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialValidate.md) in application to the FabFlee plugin;
    - [Quantity of interest distribution](https://github.com/UCL-CCS/https://github.com/UCL-CCS/EasyVVUQ/blob/dev/docs/validate_similarities.rst) extraction in application to Fusion application.     
 
+3. [**Quality in Cloud and Grid**](http://www.qoscosgrid.org) (QCG) is an integrated system offering advanced job and resource management capabilities to deliver to end-users supercomputer-like performance and structure. QCG consists of the following components:
 
-3. **QCG**: http://www.qoscosgrid.org
+-  [QCG-Pilot Job](https://qcg-pilotjob.readthedocs.io/en/latest/) is a Pilot Job system that allows to execute many subordinate jobs in a single scheduling system allocation.
 
--  [QCG-Pilot Job]() is a Pilot Job system that allows to execute many subordinate jobs in a single scheduling system allocation.
+-  [QCG-Client](http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide) is a command line client for execution of computing jobs on the clusters offered by QCG middleware.
 
--  QCG-Client is a command line client for execution of computing jobs on the clusters offered by QCG middleware.
-
--  QCG-Now is a desktop, GUI client for easy execution of computing jobs on the clusters offered by QCG middleware.
+-  [QCG-Now](http://www.qoscosgrid.org/qcg-now/en/) is a desktop, GUI client for easy execution of computing jobs on the clusters offered by QCG middleware.
 
 4. [**EasyVVUQ-QCGPJ**](https://easyvvuq-qcgpj.readthedocs.io/en/plugin/#) is a lightweight plugin for parallelization of EasyVVUQ with the QCG-PilotJob mechanism. To learn more, please see the tutorial example here.
 
