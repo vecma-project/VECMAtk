@@ -4,11 +4,11 @@ The links to the detailed tutorials for VECMAtk components and applications are 
 
 1. [**FabSim3**](https://fabsim3.readthedocs.io/en/latest/index.html) is an automation toolkit written in Python 3 featuring an integrated test infrastructure and a flexible plugin system. There are several plugins available from a diverse range of scientific domains, such as
 
-- [FabUQCampaign](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_Setup.md) for a climate modelling;
-- [FabMD]( https://github.com/UCL-CCS/FabMD) for a molecular dynamics modelling using Large-scale Atomic/Molecular Massively Parallel Simulator (LAMMPS);
-- [FabFlee](https://github.com/djgroen/FabFlee/blob/master/doc/FabFlee.md) for a migration modelling;
-- [FabMogp](https://github.com/edaub/fabmogp/blob/master/Tutorial.rst) for an earthquake modelling;
-- [FabCovid19](https://github.com/djgroen/FabCovid19/blob/master/README.md) for a Covid-19 modelling.
+   - [FabUQCampaign](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_Setup.md) for a climate modelling;
+   - [FabMD]( https://github.com/UCL-CCS/FabMD) for a molecular dynamics modelling using Large-scale Atomic/Molecular Massively Parallel Simulator (LAMMPS);
+   - [FabFlee](https://github.com/djgroen/FabFlee/blob/master/doc/FabFlee.md) for a migration modelling;
+   - [FabMogp](https://github.com/edaub/fabmogp/blob/master/Tutorial.rst) for an earthquake modelling;
+   - [FabCovid19](https://github.com/djgroen/FabCovid19/blob/master/README.md) for a Covid-19 modelling.
 
 2. [**EasyVVUQ**](https://easyvvuq.readthedocs.io/en/dev/index.html) is a Python library designed to facilitate verification, validation and uncertainty quantification (VVUQ) for a wide variety of simulations. It accounts for uncertainty quantification (UQ) and validation patterns in application to  earlier described domains.
 
@@ -35,11 +35,11 @@ The links to the detailed tutorials for VECMAtk components and applications are 
 
 3. [**Quality in Cloud and Grid**](http://www.qoscosgrid.org) (QCG) is an integrated system offering advanced job and resource management capabilities to deliver to end-users supercomputer-like performance and structure. QCG consists of the following components:
 
--  [QCG-Pilot Job](https://qcg-pilotjob.readthedocs.io/en/latest/) is a Pilot Job system that allows to execute many subordinate jobs in a single scheduling system allocation.
+   - [QCG-Pilot Job](https://qcg-pilotjob.readthedocs.io/en/latest/) is a Pilot Job system that allows to execute many subordinate jobs in a single scheduling system allocation.
+  
+   - [QCG-Client](http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide) is a command line client for execution of computing jobs on the clusters offered by QCG middleware.
 
--  [QCG-Client](http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide) is a command line client for execution of computing jobs on the clusters offered by QCG middleware.
-
--  [QCG-Now](http://www.qoscosgrid.org/qcg-now/en/) is a desktop, GUI client for easy execution of computing jobs on the clusters offered by QCG middleware.
+   - [QCG-Now](http://www.qoscosgrid.org/qcg-now/en/) is a desktop, GUI client for easy execution of computing jobs on the clusters offered by QCG middleware.
 
 4. [**EasyVVUQ-QCGPJ**](https://easyvvuq-qcgpj.readthedocs.io/en/plugin/#) is a lightweight plugin for parallelization of EasyVVUQ with the QCG-PilotJob mechanism. To learn more, please see the tutorial example here.
 
