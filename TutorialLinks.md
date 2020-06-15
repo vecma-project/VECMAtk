@@ -46,4 +46,5 @@ Currently, there are two example tutorials available on validation:
 4. [**EasyVVUQ-QCGPJ**](https://easyvvuq-qcgpj.readthedocs.io/en/plugin/#) is a lightweight plugin for parallelization of EasyVVUQ with the QCG-PilotJob mechanism. To learn more, please see the tutorial example here.
 
 5. **MUSCLE3**
+
 [MUSCLE3](https://muscle3.readthedocs.io/) is the third incarnation of the Multiscale Coupling Library and Environment.
