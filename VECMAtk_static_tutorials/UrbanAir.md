@@ -6,7 +6,7 @@
 In this tutorial you will get step-by-step guidance on the usage of several VECMAtk components to simulate air quality in the city at street level. You will also perform uncertainty quantification
 calculations within HPC execution environment. In this tutorial you will learn about the following VECMA software components and how these components are used as shown in the Tube Mapo below:
 
-![Graphical depiction of the VECMAtk components used in the UrbanAir tutorial](https://github.com/vecma-project/VECMAtk/tree/master/VECMAtk_static_tutorials/UrbanAirMap.png)
+![Graphical depiction of the VECMAtk components used in the UrbanAir tutorial](https://raw.githubusercontent.com/vecma-project/VECMAtk/master/VECMAtk_static_tutorials/UrbanAirMap.png)
 
 -   [EasyVVUQ](https://easyvvuq.readthedocs.io/en/latest/) - a Python3 library that aims to facilitate verification, validation and uncertainty quantification,
 -   [QCG Pilot Job](https://wiki.vecma.eu/qcg-pilotjobs) - a Pilot Job system that allows to execute many subordinate jobs in a single scheduling system allocation,
@@ -102,7 +102,7 @@ where *urbainairsingle.qcg* is the updated submission file.
 After the job has finished, there should a PNG file with the NO2 concentration for the domain at 2m height.
 You can also visualize HDF5 output files.
 
-![Example NO2 concentration at 2m height.](https://github.com/vecma-project/VECMAtk/tree/master/VECMAtk_static_tutorials/UrbanAir_no2_2d.png)
+![Example NO2 concentration at 2m height.](https://raw.githubusercontent.com/vecma-project/VECMAtk/master/VECMAtk_static_tutorials/UrbanAir_no2_2d.png)
 
 
 ## Sensitivity analysis of parameters using EasyVVUQ
@@ -169,4 +169,4 @@ Copy ensemble/data catalogue to your home directory. Next, change the *ensemble/
 ### Analysis
 Apart from HDF5 output files you can analyse by yourself, there will be PNG with the sensitivity analysis just like below:
 
-![Sensitivity analysis example.](https://github.com/vecma-project/VECMAtk/tree/master/VECMAtk_static_tutorials/UrbanAir_no2_sobols_multi.png)
+![Sensitivity analysis example.](https://raw.githubusercontent.com/vecma-project/VECMAtk/master/VECMAtk_static_tutorials/UrbanAir_no2_sobols_multi.png)
