@@ -7,7 +7,7 @@ The links to the detailed tutorials for VECMAtk components and applications are 
    - [FabUQCampaign](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_Setup.md) for a climate modelling;
    - [FabMD]( https://github.com/UCL-CCS/FabMD) for a molecular dynamics modelling using Large-scale Atomic/Molecular Massively Parallel Simulator (LAMMPS);
    - [FabFlee](https://github.com/djgroen/FabFlee/blob/master/doc/FabFlee.md) for a migration modelling;
-   - [FabMogp](https://github.com/edaub/fabmogp/blob/master/Tutorial.rst) for an earthquake modelling;
+   - [FabMogp](https://github.com/alan-turing-institute/vecma_workshop_tutorial/blob/master/Tutorial.rst) for an earthquake modelling;
    - [FabCovid19](https://github.com/djgroen/FabCovid19/blob/master/README.md) for a Covid-19 modelling.
 
 2. [**EasyVVUQ**](https://easyvvuq.readthedocs.io/en/dev/index.html) is a Python library designed to facilitate verification, validation and uncertainty quantification (VVUQ) for a wide variety of simulations. It accounts for uncertainty quantification (UQ) and validation patterns in application to  earlier described domains.
