@@ -41,8 +41,8 @@ The links to the detailed tutorials for VECMAtk components and applications are 
 
    - [QCG-Now](http://www.qoscosgrid.org/qcg-now/en/) is a desktop, GUI client for easy execution of computing jobs on the clusters offered by QCG middleware.
 
-4. [**EasyVVUQ-QCGPJ**](https://easyvvuq-qcgpj.readthedocs.io/en/plugin/#) is a lightweight plugin for parallelization of EasyVVUQ with the QCG-PilotJob mechanism. To learn more, please see the tutorial example here.
+4. [**EasyVVUQ-QCGPJ**](https://easyvvuq-qcgpj.readthedocs.io/en/latest/) is a lightweight plugin for parallelization of EasyVVUQ with the QCG-PilotJob mechanism. To learn more, please see the tutorial example [here](https://easyvvuq-qcgpj.readthedocs.io/en/latest/tutorials/cooling_cup/guide/tutorial.html).
 
 5. [**MUSCLE3**](https://muscle3.readthedocs.io/) is the third incarnation of the Multiscale Coupling Library and Environment.
    
-   - [ISR3D]() is the 3D in-stent restenosis application aiming to simulate smooth muscle cells (SMC) proliferation and restenosis process as a complication after coronary stenting procedure. It is a fully coupled 3D multiscale model, which includes several single-scale submodels as well as utility modules which facilitate communication between the submodels. 
+   - [ISR3D](https://github.com/vecma-project/VECMAtk/blob/master/VECMAtk_static_tutorials/ISR3D_installation_guide.md) is the 3D in-stent restenosis application aiming to simulate smooth muscle cells (SMC) proliferation and restenosis process as a complication after coronary stenting procedure. It is a fully coupled 3D multiscale model, which includes several single-scale submodels as well as utility modules which facilitate communication between the submodels. 
