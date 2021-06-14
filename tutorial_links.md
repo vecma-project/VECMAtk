@@ -8,7 +8,7 @@ In this file, we provide the links to the documentaion of VECMAtk components and
 
 1. [**FabSim3**](https://fabsim3.readthedocs.io/en/latest/index.html) is an automation toolkit written in Python 3 featuring an integrated test infrastructure and a flexible plugin system. There are several plugins available from a diverse range of scientific domains, such as
 
-   - [FabUQCampaign](https://github.com/wedeling/FabUQCampaign/blob/master/README.md) for a climate modelling;
+   - [FabUQCampaign](https://github.com/wedeling/FabUQCampaign/blob/master/README.md) for coupling EasyVVUQ with FabSim3;
    - [FabMD](https://fabmd.readthedocs.io) for a molecular dynamics modelling using Large-scale Atomic/Molecular Massively Parallel Simulator (LAMMPS);
    - [FabFlee](https://github.com/djgroen/FabFlee/blob/master/doc/FabFlee.md) for a migration modelling;
    - [FabMogp](https://github.com/alan-turing-institute/vecma_workshop_tutorial/blob/master/Tutorial.rst) for an earthquake modelling;
@@ -18,11 +18,11 @@ In this file, we provide the links to the documentaion of VECMAtk components and
 
 2. [**EasyVVUQ**](https://easyvvuq.readthedocs.io) is a Python library designed to facilitate verification, validation and uncertainty quantification (VVUQ) for a wide variety of simulations. It accounts for uncertainty quantification (UQ) and validation patterns in application to  earlier described domains.
 
-We provide tutorials for the basic concepts of EasyVVUQ workflows using Jupyter Notebooks:
+   We provide tutorials for the basic concepts of EasyVVUQ workflows using Jupyter Notebooks:
 
-   - [Encoder and Decoder](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/a6852d6c5ba36f15579e601d7a8d074505f31084?filepath=tutorials%2Fbasic_tutorial.ipynb) to set-up an input file for a simulation code and to parse the output of the simulation;
-   - [Campaign](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/a6852d6c5ba36f15579e601d7a8d074505f31084?filepath=tutorials%2Fbasic_tutorial.ipynb) to operate and run simulations;
-   - [Analysis](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/74d6a9f4b0eecc754918de2f3795395d35ac4875?filepath=tutorials%2Fvector_qoi_tutorial.ipynb) to analyse the simulation output. 
+      - [Encoder and Decoder](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/a6852d6c5ba36f15579e601d7a8d074505f31084?filepath=tutorials%2Fbasic_tutorial.ipynb) to set-up an input file for a simulation code and to parse the output of the simulation;
+      - [Campaign](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/a6852d6c5ba36f15579e601d7a8d074505f31084?filepath=tutorials%2Fbasic_tutorial.ipynb) to operate and run simulations;
+      - [Analysis](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/74d6a9f4b0eecc754918de2f3795395d35ac4875?filepath=tutorials%2Fvector_qoi_tutorial.ipynb) to analyse the simulation output. 
 
    **UQ Sampling techniques and tutorials**
    EasyVVUQ provides four sampling methods for analysis:
