@@ -37,7 +37,7 @@ We provide tutorials for the basic concepts of EasyVVUQ workflows using Jupyter 
    - [Advection Diffusion Equation](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ADE.md) (ADE) using FabUQCampaign plugin;
    - [Two-dimensional ocean model](https://github.com/wedeling/FabUQCampaign/blob/master/Tutorial_ocean.md) (Ocean2D) using FabUQCampaign plugin;
    - [Flee algorithm sensitivity analysis](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialSensitivity.md) using FabFlee plugin;
-   - [LAMMPS simulations](https://github.com/UCL-CCS/FabMD/blob/master/doc/EasyVVUQ_FabMD_example.md) using FabMD plugin;
+   - [LAMMPS simulations](https://fabmd.readthedocs.io/en/latest/execution.html#easyvvuq-fabmd-example) using FabMD plugin;
    - [Earthquake model](https://github.com/edaub/vecma_workshop_tutorial/blob/master/Tutorial.rst) using FabMogp plugin;
 
    Interactive tutorials for EasyVVUQ samplers with examples are available [here](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/dev?filepath=tutorials). 
