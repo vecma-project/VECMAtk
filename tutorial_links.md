@@ -27,10 +27,10 @@ In this file, we provide the links to the documentaion of VECMAtk components and
    **UQ Sampling techniques and tutorials**
    EasyVVUQ provides four sampling methods for analysis:
 
-   - Stochastic Collocation,
-   - Polynomial Chaos Expansion,
-   - Monte Carlo Sensitivity Analysis,
-   - Markov-Chain Monte Carlo.
+   - [Stochastic Collocation](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_fusion_SC_dask_tutorial.ipynb),
+   - [Polynomial Chaos Expansion](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_fusion_tutorial.ipynb),
+   - [Monte Carlo Sensitivity Analysis](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_mcmc.ipynb),
+   - [Markov-Chain Monte Carlo](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Fmcmc_tutorial.ipynb).
 
    We provide the static tutorials for these samplers below:
   
