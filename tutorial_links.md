@@ -43,7 +43,7 @@ We provide tutorials for the basic concepts of EasyVVUQ workflows using Jupyter 
    Interactive tutorials for EasyVVUQ samplers with examples are available [here](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/dev?filepath=tutorials). 
 
    **Verification and Validation (V&V) patterns tutorials**
-   There four V&V patterns implemented in VECMAtk, which are described [here](https://github.com/djgroen/FabSim3/blob/master/VVP/vvp.py).
+   There four V&V patterns implemented in VECMAtk, which are described [here](https://github.com/djgroen/FabSim3/blob/master/fabsim/VVP/vvp.py).
 
    V&V examples:
 
