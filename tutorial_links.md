@@ -1,4 +1,4 @@
-# VECMAtk Tutorials
+# Links to the documentaion of VECMAtk components and application tutorials
 
 The VECMAtk tutorials are divided into two formats:
 - **Static tutorials** provide informative read-only information for the VECMAtk components with internal and external application instances.
