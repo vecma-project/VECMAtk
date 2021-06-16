@@ -4,7 +4,7 @@ The VECMAtk tutorials are divided into two formats:
 - **Static tutorials** provide informative read-only information for the VECMAtk components with internal and external application instances.
 - **Interactive tutorials** are easy-to-use as installation of the VECMAtk components are not required and they are versatile because users are able to append with additional remarks, which are hosted in the [VECMA JupyterHub](https://jupyter.vecma.psnc.pl) environment.
 
-In this file, we provide the links to the documentaion of VECMAtk components and tutorials for applications from a diverse range of scientific domains:
+Here, we provide the links to the documentaion of VECMAtk components and tutorials for applications from a diverse range of scientific domains:
 
 1. [**FabSim3**](https://fabsim3.readthedocs.io/en/latest/index.html) is an automation toolkit written in Python 3 featuring an integrated test infrastructure and a flexible plugin system. There are several plugins available from a diverse range of scientific domains, such as
 
@@ -16,7 +16,7 @@ In this file, we provide the links to the documentaion of VECMAtk components and
    - [FabCovidsim](https://github.com/arabnejad/FabCovidsim/blob/dev/README.md) for CovidsSim epidemiological code.
    
 
-2. [**EasyVVUQ**](https://easyvvuq.readthedocs.io) is a Python library designed to facilitate verification, validation and uncertainty quantification (VVUQ) for a wide variety of simulations. It accounts for uncertainty quantification (UQ) and validation patterns in application to  earlier described domains.
+2. [**EasyVVUQ**](https://easyvvuq.readthedocs.io) is a Python library designed to facilitate verification, validation and uncertainty quantification (VVUQ) for a wide variety of simulations. It accounts for uncertainty quantification (UQ) and validation patterns in application to various domains.
 
    We provide tutorials for the basic concepts of EasyVVUQ workflows using Jupyter Notebooks:
 
@@ -24,7 +24,8 @@ In this file, we provide the links to the documentaion of VECMAtk components and
       - [Campaign](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/a6852d6c5ba36f15579e601d7a8d074505f31084?filepath=tutorials%2Fbasic_tutorial.ipynb) to operate and run simulations;
       - [Analysis](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/74d6a9f4b0eecc754918de2f3795395d35ac4875?filepath=tutorials%2Fvector_qoi_tutorial.ipynb) to analyse the simulation output. 
 
-   **UQ Sampling techniques and tutorials**
+   2.1 **UQ Sampling techniques and tutorials**
+   
    EasyVVUQ provides four sampling methods for analysis:
 
    - [Stochastic Collocation](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_fusion_SC_dask_tutorial.ipynb),
@@ -42,18 +43,27 @@ In this file, we provide the links to the documentaion of VECMAtk components and
 
    Interactive tutorials for EasyVVUQ samplers with examples are available [here](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/dev?filepath=tutorials). 
 
-   **Verification and Validation (V&V) patterns tutorials**
-   There four V&V patterns implemented in VECMAtk, which are described [here](https://github.com/djgroen/FabSim3/blob/master/fabsim/VVP/vvp.py).
+   2.2 **Verification and Validation (V&V) patterns and tutorials**
+   
+   There are four prominent V&V patterns in VECMAtk, namely:
 
+    - Stable Intermediate Forms (SIF)
+    - [Level of Refinement (LoR)](https://fabsim3.readthedocs.io/en/latest/patterns.html#level-of-refinement-lor)
+    - [Ensemble Output Validation (EoV)](https://fabsim3.readthedocs.io/en/latest/patterns.html#ensemble-output-validation-eov)
+    - [Quantities of Interest Distribution Comparison (QDC)](https://fabsim3.readthedocs.io/en/latest/patterns.html#quantities-of-interest-distribution-comparison-qdc) 
+    
+    They are most suitable for multiscale computing applications with source codes available [here](https://github.com/djgroen/FabSim3/blob/master/fabsim/VVP/vvp.py).
+  
    V&V examples:
 
-   - [Ensemble Output validation](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialValidate.md) in application to the FabFlee plugin;
-   - [Quantity of interest distribution](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/74d6a9f4b0eecc754918de2f3795395d35ac4875?filepath=tutorials%2Fvector_qoi_tutorial.ipynb) extraction for the SIR epidemiology model. 
+   - [Ensemble Output Validation](https://github.com/djgroen/FabFlee/blob/master/doc/TutorialValidate.md) in application to the FabFlee plugin;
+   - [Quantity of Interest Distribution Comparison](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/74d6a9f4b0eecc754918de2f3795395d35ac4875?filepath=tutorials%2Fvector_qoi_tutorial.ipynb) for the SIR epidemiology model. 
 
 
 3. [**Quality in Cloud and Grid**](http://www.qoscosgrid.org) (QCG) is an integrated system offering advanced job and resource management capabilities to deliver to end-users supercomputer-like performance and structure. QCG consists of the following components:
 
-   - [QCG-Pilot Job](https://qcg-pilotjob.readthedocs.io/en/latest/) is a Pilot Job system that allows to execute many subordinate jobs in a single scheduling system allocation.
+   - [QCG-PilotJob](https://qcg-pilotjob.readthedocs.io/en/latest/) is a Pilot Job system that allows to execute many subordinate jobs in a single scheduling system allocation. 
+   We demonstrate how EasyVVUQ workflows can be adapted to enable their executions with QCG-PilotJob on HPC machines [here](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/d105db613f6fa92783093eb561a29e5350128703?filepath=tutorials%2Fbasic_tutorial_qcgpj.ipynb). 
   
    - [QCG-Client](http://www.qoscosgrid.org/trac/qcg-broker/wiki/client_user_guide) is a command line client for execution of computing jobs on the clusters offered by QCG middleware.
 
