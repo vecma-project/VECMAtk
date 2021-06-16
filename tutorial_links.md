@@ -26,12 +26,14 @@ Here, we provide the links to the documentaion of VECMAtk components and tutoria
 
    2.1 **UQ Sampling techniques and tutorials**
    
-   EasyVVUQ provides four sampling methods for analysis:
+   EasyVVUQ provides four sampling methods for analysis (see [Wright et al. (2020)](https://doi.org/10.1002/adts.201900246) for explanation of these sampling techniques:
 
    - [Stochastic Collocation](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_fusion_SC_dask_tutorial.ipynb),
    - [Polynomial Chaos Expansion](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_fusion_tutorial.ipynb),
    - [Monte Carlo Sensitivity Analysis](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_mcmc.ipynb),
    - [Markov-Chain Monte Carlo](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Fmcmc_tutorial.ipynb).
+
+  
 
    We provide the static tutorials for these samplers below:
   
@@ -74,3 +76,6 @@ Here, we provide the links to the documentaion of VECMAtk components and tutoria
 5. [**MUSCLE3**](https://muscle3.readthedocs.io/) is the third incarnation of the Multiscale Coupling Library and Environment.
    
    - [ISR3D](https://github.com/vecma-project/VECMAtk/blob/master/VECMAtk_static_tutorials/ISR3D_installation_guide.md) is the 3D in-stent restenosis application aiming to simulate smooth muscle cells (SMC) proliferation and restenosis process as a complication after coronary stenting procedure. It is a fully coupled 3D multiscale model, which includes several single-scale submodels as well as utility modules which facilitate communication between the submodels. 
+
+
+We also present the application of these VECMAtk components to five domains, which are forced migration, fusion energy, climate, biomedicine and urban air pollution, in the publication by [Suleimenova et al.(2021)](https://doi.org/10.1016/j.jocs.2021.101402) to perform uncertainty quantification analysis, use surrogate models, couple multiscale models and execute sensitivity analysis on HPC.
