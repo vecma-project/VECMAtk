@@ -26,7 +26,7 @@ Here, we provide the links to the documentaion of VECMAtk components and tutoria
 
    2.1 **UQ Sampling techniques and tutorials**
    
-   EasyVVUQ provides four sampling methods for analysis (see [Wright et al. (2020)](https://doi.org/10.1002/adts.201900246) for explanation of these sampling techniques:
+   EasyVVUQ provides four sampling methods for analysis (see [Wright et al. (2020)](https://doi.org/10.1002/adts.201900246) for explanation of these sampling techniques):
 
    - [Stochastic Collocation](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_fusion_SC_dask_tutorial.ipynb),
    - [Polynomial Chaos Expansion](https://mybinder.org/v2/gh/UCL-CCS/EasyVVUQ/ce3bf5255cd9629e763e14101c81842aa63b2bce?filepath=tutorials%2Feasyvvuq_fusion_tutorial.ipynb),
